@@ -158,5 +158,3 @@ if ($("body").data("title") === "my_learner_page") {
     readOutLoud("आपसे मिलकर अच्छा लगा!", "hi");
   });
 }
-
-console.log(mic);
