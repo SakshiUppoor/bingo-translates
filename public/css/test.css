@@ -1,0 +1,84 @@
+#navbarNavDropdown {
+  position: fixed;
+  right: 1em;
+}
+
+.title {
+  font-size: 2.4em;
+  text-align: center;
+  font-weight: 600;
+  margin: 0.5em 0;
+}
+
+select:focus {
+  outline: none;
+}
+
+select {
+  border: none;
+  cursor: pointer;
+  border-bottom: solid #000;
+}
+
+.my-language {
+  font-size: 1.3em;
+  margin: 1em 20em;
+  display: inline-block;
+}
+
+.control {
+  text-align: center;
+}
+
+.qset {
+  text-align: center;
+  margin: 0 5em;
+  font-size: 2em;
+}
+
+.question {
+  background: rgb(255, 209, 129);
+  background: linear-gradient(
+    111deg,
+    rgb(235, 222, 48) 0%,
+    rgb(251, 104, 6) 100%
+  );
+  margin: 1em 0;
+  padding: 1em 0;
+  font-size: 1.25em;
+  color: white;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.6em;
+}
+
+.options > div {
+  border: solid rgb(90, 104, 101);
+  padding: 0.5em;
+  color: rgb(90, 104, 101);
+  cursor: pointer;
+}
+
+.question,
+.options > * {
+  border-radius: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.options > div:hover {
+  border: solid rgb(85, 183, 240);
+  color: rgb(85, 183, 240);
+}
+
+.btncontainer {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 1.5em;
+}
+
+.btncontainer a:hover {
+  text-decoration: none;
+}
