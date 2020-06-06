@@ -27,6 +27,9 @@
 * [NodeJS](https://nodejs.org/en/)<br/>
 * [ExpressJS](https://expressjs.com/) <br/>
 * [Socket-io](https://www.npmjs.com/package/socket.io) <br/>
+* [Google Translation API](https://cloud.google.com/translate/docs) <br/>
+* [Web Speech API](https://www.google.com/intl/en/chrome/demos/speech.html) <br/>
+* [Maps API](https://cloud.google.com/maps-platform/?utm_source=google&utm_medium=cpc&utm_campaign=FY18-Q2-global-demandgen-paidsearchonnetworkhouseads-cs-maps_contactsal_saf&utm_content=text-ad-none-none-DEV_c-CRE_342710846307-ADGP_Hybrid+%7C+AW+SEM+%7C+SKWS+~+Mapping+APIs+EXA-KWID_43700042848688156-aud-596763661393:kwd-301485311882-userloc_1007785&utm_term=KW_maps%20api-ST_maps+api&gclid=CjwKCAjw2uf2BRBpEiwA31VZj8u7zSQ5Idv6sOPA2PP_iWCh3vY_WEl0n95IPOTCAXothAUZKSVftBoCzHkQAvD_BwE) <br/>
 * [CSS3](https://www.w3.org/Style/CSS/Overview.en.html) <br/> 
 * [HTML5](https://html.com/) <br/>
 * [Javascript](https://www.javascript.com/) <br/>
