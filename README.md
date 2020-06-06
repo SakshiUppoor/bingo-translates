@@ -22,7 +22,7 @@
 * <a href="https://github.com/sauravUppoor"><b>Saurav Uppoor</b></a> - Frontend & Design
 * <a href="https://github.com/yash-chad"><b>Yash Chachad</b></a> - Backend
 
-<h3>Built with </h3>
+## Built with
  NodeJS <br/>
  ExpressJS <br/>
  Socket-io <br/>
