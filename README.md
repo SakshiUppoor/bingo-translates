@@ -23,9 +23,9 @@
 * <a href="https://github.com/yash-chad"><b>Yash Chachad</b></a> - Backend
 
 <h3>Built with </h3>
-* NodeJS
-* ExpressJS
-* Socket-io
-* CSS3
-* HTML5
-* Javascript
+ NodeJS <br/>
+ ExpressJS <br/>
+ Socket-io <br/>
+ CSS3 <br/> 
+ HTML5 <br/>
+ Javascript <br/>
