@@ -24,7 +24,7 @@
 
 
 ## Built with
- NodeJS <br/>
+* NodeJS <br/>
  ExpressJS <br/>
  Socket-io <br/>
  CSS3 <br/> 
