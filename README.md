@@ -7,7 +7,7 @@
     <a href="https://github.com/SiddhiJhunjhunwala/bingo-translates"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://trana.live">View</a>
+    <a href="https://github.com/SiddhiJhunjhunwala/bingo-translates">View</a>
     ·
     <a href="https://github.com/SiddhiJhunjhunwala/bingo-translates/issues">Report Bug</a>
     ·
