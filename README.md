@@ -24,9 +24,9 @@
 
 
 ## Built with
-* NodeJS <br/>
-* ExpressJS <br/>
-* Socket-io <br/>
-* CSS3 <br/> 
-* HTML5 <br/>
-* Javascript <br/>
+* [NodeJS](https://nodejs.org/en/)<br/>
+* [ExpressJS](https://expressjs.com/) <br/>
+* [Socket-io](https://www.npmjs.com/package/socket.io) <br/>
+* [CSS3](https://www.w3.org/Style/CSS/Overview.en.html) <br/> 
+* [HTML5](https://html.com/) <br/>
+* [Javascript](https://www.javascript.com/) <br/>
