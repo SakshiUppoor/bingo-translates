@@ -25,8 +25,8 @@
 
 ## Built with
 * NodeJS <br/>
- ExpressJS <br/>
- Socket-io <br/>
- CSS3 <br/> 
- HTML5 <br/>
- Javascript <br/>
+* ExpressJS <br/>
+* Socket-io <br/>
+* CSS3 <br/> 
+* HTML5 <br/>
+* Javascript <br/>
