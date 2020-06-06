@@ -14,7 +14,18 @@
     <a href="https://github.com/SiddhiJhunjhunwala/bingo-translates/issues">Request Feature</a>
   </p>
   </p>
-
+  
+ ## About the project
+ ### Features
+ * Language Translation
+* Text-to-speech & Speech-to-text
+* Multi-language Chat
+* No abusive language allowed
+* Live location sharing
+* Real-time translation
+* Real-time conversation
+* Learn and practice 
+* Word of the day
 
 ## Team
 * <a href="https://github.com/SakshiUppoor"><b>Sakshi Uppoor</b></a> - Frontend & Design
