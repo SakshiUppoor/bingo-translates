@@ -4,7 +4,7 @@
   <p align="center">
     A language translator web app with many exciting features such as Real time chat in rooms for various languages, quizes, word of the day and many more stuff!
     <br />
-    <a href="https://github.com/SiddhiJhunjhunwala/bingo-translates"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/SiddhiJhunjhunwala/bingo-translates/blob/master/src/Bingo.pdf"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/SiddhiJhunjhunwala/bingo-translates">View</a>
