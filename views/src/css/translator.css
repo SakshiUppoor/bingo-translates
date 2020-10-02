@@ -28,6 +28,7 @@ box-shadow: 10px 9px 11px -11px #676767; */
   margin-bottom: 0;
   border: none;
   resize: none;
+  padding: 10px !important;
 }
 
 textarea:focus {
@@ -161,7 +162,7 @@ ion-icon {
 }
 
 select {
-  -moz-appearance:none; 
-  -webkit-appearance:none; 
-  appearance:none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
