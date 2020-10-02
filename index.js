@@ -3,7 +3,7 @@ const express = require("express");
 const http = require("http"); //Core HTTP module
 const socketio = require("socket.io");
 const Filter = require("bad-words");
-const googleTranslate = require("./config");
+const translatte = require("translatte");
 const { generateMessage, generateLocation } = require("./utils/messages");
 const {
   addUser,
@@ -15,15 +15,11 @@ const {
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-//The above statement just refactored the way we set up expess.By default express does it for us
-//Also we did server.listen() instead of app.listen()
-//The only reason we did this was to pass server to the socketio(server) function
 
+app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "./views")));
 
-//NOTE:The emit functions for connection and disconnect are inbiult by the socket.io ,we dont need to call them
 io.on("connection", (socket) => {
-  //Here the parameter socket contains all the information about the event
   console.log("New user connected!");
 
   socket.on("join", ({ username, room }, callback) => {
@@ -92,6 +88,14 @@ io.on("connection", (socket) => {
   });
 });
 
+io.on("translate", (socket) => {
+  console.log("connect");
+});
+
+app.get("/hi", (req, res) => {
+  res.render("index");
+});
+
 app.get("/translated", (req, res) => {
   if (!req.query.inputstring) {
     res.send({
@@ -101,19 +105,14 @@ app.get("/translated", (req, res) => {
     const inputstring = req.query.inputstring;
     const source_lan = req.query.source_lan;
     const res_lan = req.query.res_lan;
-
-    googleTranslate.translate(
-      inputstring,
-      source_lan,
-      res_lan,
-      (err, translation) => {
-        if (err) {
-          return err;
-        } else {
-          return res.send(translation);
-        }
-      }
-    );
+    translatte(inputstring, { from: source_lan, to: res_lan })
+      .then((translated_res) => {
+        res.send({ translatedText: translated_res.text });
+        console.log(translated_res.text);
+      })
+      .catch((err) => {
+        return err;
+      });
   }
 });
 

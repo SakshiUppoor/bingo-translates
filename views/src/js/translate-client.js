@@ -4,8 +4,8 @@ const result = document.querySelector("#result");
 const btn11 = document.querySelector(".talk");
 const speakme = document.querySelector("#speakme");
 
-var someFunction = function(mymessage) {
-  return new Promise(function(resolve, reject) {
+var someFunction = function (mymessage) {
+  return new Promise(function (resolve, reject) {
     try {
       const tvalue = translateme(mymessage);
       resolve(tvalue);
@@ -16,7 +16,7 @@ var someFunction = function(mymessage) {
 };
 
 //Translate the data
-const translateme = mymessage => {
+const translateme = (mymessage) => {
   if ($("body").data("title") === "my_translate_page") {
     var datainp = inputdata.value;
 
@@ -30,9 +30,7 @@ const translateme = mymessage => {
     var res_lan = "hi";
   }
 
-  //   console.log(source_lan);
-  //   console.log(res_lan);
-
+  var datainp = inputdata.value.trim();
   const inputlink =
     "http://localhost:3000/translated?source_lan=" +
     source_lan +
@@ -42,16 +40,17 @@ const translateme = mymessage => {
     datainp;
   console.log(inputlink);
 
-  fetch(inputlink).then(res => {
-    res.json().then(data => {
+  fetch(inputlink).then((res) => {
+    res.json().then((data) => {
       console.log(data);
 
       if ($("body").data("title") === "my_translate_page") {
-        result.textContent = "Loading....";
+        result.value = "Loading....";
 
         if (data.error) {
           result.value = data.error;
         } else {
+          console.log(data.translatedText);
           result.value = data.translatedText;
         }
       } else {
@@ -65,7 +64,7 @@ const translateme = mymessage => {
 
 //Submit form event
 if ($("body").data("title") === "my_translate_page") {
-  submit.addEventListener("click", e => {
+  submit.addEventListener("click", (e) => {
     e.preventDefault();
     translateme();
   });
@@ -80,7 +79,7 @@ recognition.onstart = () => {
   console.log("Voices activated!!");
 };
 
-recognition.onresult = event => {
+recognition.onresult = (event) => {
   console.log(event);
   const current = event.resultIndex;
 
