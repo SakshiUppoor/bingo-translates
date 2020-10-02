@@ -3,13 +3,13 @@ const express = require("express");
 const http = require("http"); //Core HTTP module
 const socketio = require("socket.io");
 const Filter = require("bad-words");
-const googleTranslate = require("./utils/translate");
+const googleTranslate = require("./config");
 const { generateMessage, generateLocation } = require("./utils/messages");
 const {
   addUser,
   removeUser,
   getUser,
-  getUsersInRoom
+  getUsersInRoom,
 } = require("./utils/users");
 
 const app = express();
@@ -19,10 +19,10 @@ const io = socketio(server);
 //Also we did server.listen() instead of app.listen()
 //The only reason we did this was to pass server to the socketio(server) function
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "./views")));
 
 //NOTE:The emit functions for connection and disconnect are inbiult by the socket.io ,we dont need to call them
-io.on("connection", socket => {
+io.on("connection", (socket) => {
   //Here the parameter socket contains all the information about the event
   console.log("New user connected!");
 
@@ -41,7 +41,7 @@ io.on("connection", socket => {
       .emit("message", generateMessage("Bingo!", `${username} has joined!`)); //Sends message to everyone except the user who has joined
     io.to(user.room).emit("roomData", {
       room: user.room,
-      users: getUsersInRoom(user.room)
+      users: getUsersInRoom(user.room),
     });
     callback();
   });
@@ -86,7 +86,7 @@ io.on("connection", socket => {
       );
       io.to(user.room).emit("roomData", {
         room: user.room,
-        users: getUsersInRoom(user.room)
+        users: getUsersInRoom(user.room),
       });
     }
   });
@@ -95,7 +95,7 @@ io.on("connection", socket => {
 app.get("/translated", (req, res) => {
   if (!req.query.inputstring) {
     res.send({
-      error: "Please provide some input text"
+      error: "Please provide some input text",
     });
   } else {
     const inputstring = req.query.inputstring;
