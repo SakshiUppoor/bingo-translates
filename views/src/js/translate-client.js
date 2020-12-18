@@ -3,16 +3,9 @@ const result = document.querySelector("#result");
 
 //Translate the data
 const translateme = (datainp, source_lan, res_lan) => {
-  console.log(datainp, source_lan, res_lan);
-  const inputlink =
-    "http://localhost:3000/translated?source_lan=" +
-    source_lan +
-    "&res_lan=" +
-    res_lan +
-    "&inputstring=" +
-    datainp;
-
-  fetch(inputlink).then((res) => {
+  fetch(
+    `http://localhost:3000/translated?source_lan=${source_lan}&res_lan=${res_lan}&inputstring=${datainp}`
+  ).then((res) => {
     res.json().then((data) => {
       console.log(data);
 
@@ -22,11 +15,9 @@ const translateme = (datainp, source_lan, res_lan) => {
         if (data.error) {
           result.value = data.error;
         } else {
-          console.log(data.translatedText);
           result.value = data.translatedText;
         }
       } else {
-        console.log(data.translatedText);
         const input = document.getElementById("input");
         input.value = data.translatedText;
       }
