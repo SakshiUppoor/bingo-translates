@@ -11,15 +11,11 @@ var inputArea = document.querySelector("#inputdata");
 inputArea.value = "";
 
 resDropDown.addEventListener("change", (e) => {
-  result.value = "Translating...";
-  speechBtn.disabled = true;
-  e.preventDefault();
-  performTranslation();
+  performTranslation(e);
 });
 
 translateBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  performTranslation();
+  performTranslation(e);
 });
 
 copyTextareaBtn.addEventListener("click", function (event) {
@@ -75,9 +71,15 @@ function textToSpeech() {
   readOutLoud(totranslate, lang);
 }
 
-function performTranslation() {
+function performTranslation(e) {
+  
   const source_lan = document.querySelector("#source_lan").value;
   const res_lan = document.querySelector("#res_lan").value;
   const inputdata = document.querySelector("#inputdata");
+  
+  result.value = "Translating...";
+  speechBtn.disabled = true;
+  
+  e.preventDefault();
   translateme(inputdata.value.trim(), source_lan, res_lan);
 }
