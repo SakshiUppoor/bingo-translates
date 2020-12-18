@@ -17,7 +17,8 @@ const translateme = (datainp, source_lan, res_lan) => {
         } else {
           result.value = data.translatedText;
         }
-        speakme.disabled = false;
+        var speechBtn = document.querySelector("#speakme");
+        speechBtn.disabled = false;
       } else {
         const input = document.getElementById("input");
         input.value = data.translatedText;
