@@ -11,13 +11,14 @@ router.get("/translated", (req, res) => {
     const inputstring = req.query.inputstring;
     const source_lan = req.query.source_lan;
     const res_lan = req.query.res_lan;
+
     translatte(inputstring, { from: source_lan, to: res_lan })
       .then((translated_res) => {
+        // console.log(translated_res);
         res.send({ translatedText: translated_res.text });
-        console.log(translated_res.text);
       })
       .catch((err) => {
-        return err;
+        res.send(err);
       });
   }
 });

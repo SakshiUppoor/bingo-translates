@@ -17,31 +17,31 @@ const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
 //eg : ?username=yashchachad1&room=myroom
 //Qs.parse returns all the query parameters as object
 const { username, room } = Qs.parse(location.search, {
-  ignoreQueryPrefix: true
+  ignoreQueryPrefix: true,
 });
 
 const autoscroll = () => {
   messages.scrollTop = messages.scrollHeight;
 };
 
-socket.on("message", message => {
+socket.on("message", (message) => {
   console.log(message);
 
   const html = Mustache.render(messageTemplate, {
     username: message.username,
     message: message.text,
-    createdAt: moment(message.createdAt).format("h:mm a")
+    createdAt: moment(message.createdAt).format("h:mm a"),
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
 });
 
-socket.on("locationMessage", message => {
+socket.on("locationMessage", (message) => {
   console.log(message);
   const html = Mustache.render(locationTemplate, {
     username: message.username,
     locationlink: message.locationlink,
-    createdAt: moment(message.createdAt).format("h:mm a")
+    createdAt: moment(message.createdAt).format("h:mm a"),
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
@@ -50,12 +50,12 @@ socket.on("locationMessage", message => {
 socket.on("roomData", ({ room, users }) => {
   const html = Mustache.render(sidebarTemplate, {
     room,
-    users
+    users,
   });
   document.querySelector("#sidebar").innerHTML = html;
 });
 
-messageForm.addEventListener("submit", e => {
+messageForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   messageFormButton.setAttribute("disabled", "disabled"); //Disable send button on clicking
@@ -64,7 +64,7 @@ messageForm.addEventListener("submit", e => {
   const message = document.querySelector("input").value;
   // messageForm.value = translateme(message);
 
-  socket.emit("message", message, error => {
+  socket.emit("message", message, (error) => {
     messageFormButton.removeAttribute("disabled"); //Reactivate the button on sending
     messageFormInput.value = "";
     messageFormInput.focus();
@@ -78,13 +78,12 @@ messageForm.addEventListener("submit", e => {
 });
 
 const translatebtn = document.querySelector("#button_trans");
-translatebtn.addEventListener("click", e => {
+translatebtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  //const message=e.target.elements.message.value
   const message = document.querySelector("input").value;
   const input = document.getElementById("input");
-  input.value = translateme(message);
+  input.value = translateme(message, "en", "hi");
 });
 
 locationbutton.addEventListener("click", () => {
@@ -94,12 +93,12 @@ locationbutton.addEventListener("click", () => {
     return alert("OOps! The current browser doesn't support this feature");
   }
 
-  navigator.geolocation.getCurrentPosition(position => {
+  navigator.geolocation.getCurrentPosition((position) => {
     socket.emit(
       "sendLocation",
       {
         latitude: position.coords.latitude,
-        longitude: position.coords.longitude
+        longitude: position.coords.longitude,
       },
       () => {
         console.log("Location Shared!");
@@ -109,7 +108,7 @@ locationbutton.addEventListener("click", () => {
   });
 });
 
-socket.emit("join", { username, room }, error => {
+socket.emit("join", { username, room }, (error) => {
   if (error) {
     alert(error);
     location.href = "/";
