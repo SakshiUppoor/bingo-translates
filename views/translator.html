@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Translator</title>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <link rel="stylesheet" type="text/css" href="../src/css/translator.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/css/translator.css"
+    />
 
     <link
       rel="stylesheet"
@@ -77,6 +81,7 @@
           <div class="outer">
             <textarea
               class="textbox1 textarea"
+              placeholder="Enter your text here"
               id="inputdata"
               rows="17"
               cols="80"
@@ -110,28 +115,35 @@
           <div class="outer2">
             <textarea
               class="textarea textbox2"
-              placeholder="ab to aajaaa"
               id="result"
               rows="15"
               cols="80"
               disabled="disabled"
             >
             </textarea>
-            <span class="mic right" id="speakme"
-              ><ion-icon name="volume-high"></ion-icon
-            ></span>
+            <button class="mic right" id="speakme" onclick="textToSpeech()">
+              <ion-icon name="volume-high"></ion-icon>
+            </button>
             <div>
-              <span class="mic"><ion-icon name="copy"></ion-icon></span>
-              <span class="mic"><ion-icon name="share"></ion-icon></span>
-              <span class="mic"><ion-icon name="arrow-down"></ion-icon></span>
+              <span class="mic" id="copy-btn">
+                <ion-icon name="copy"></ion-icon>
+              </span>
+              <span class="mic">
+                <ion-icon name="share"></ion-icon>
+              </span>
+              <span class="mic" id="download-btn">
+                <ion-icon name="arrow-down"></ion-icon>
+              </span>
             </div>
           </div>
         </div>
       </div>
-      <center><button id="btn11" class="button">Translate</button></center>
+      <center>
+        <button id="translate-btn" class="button">Translate</button>
+      </center>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../src/js/translate-client.js"></script>
-    <script src="../src/js/translate_page.js"></script>
+    <script src="../static/js/translate-client.js"></script>
+    <script src="../static/js/translate_page.js"></script>
   </body>
 </html>
