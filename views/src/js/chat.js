@@ -16,9 +16,12 @@ const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
 //location.search is a browser side tool which gives us the querystring
 //eg : ?username=yashchachad1&room=myroom
 //Qs.parse returns all the query parameters as object
-const { username, room } = Qs.parse(location.search, {
-  ignoreQueryPrefix: true,
-});
+const { username, room, source_language, res_language } = Qs.parse(
+  location.search,
+  {
+    ignoreQueryPrefix: true,
+  }
+);
 
 const autoscroll = () => {
   messages.scrollTop = messages.scrollHeight;
@@ -83,7 +86,7 @@ translatebtn.addEventListener("click", (e) => {
 
   const message = document.querySelector("input").value;
   const input = document.getElementById("input");
-  input.value = translateme(message, "en", "hi");
+  input.value = translateme(message, source_language, res_language);
 });
 
 locationbutton.addEventListener("click", () => {
