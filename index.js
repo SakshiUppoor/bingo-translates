@@ -1,10 +1,10 @@
 const path = require("path");
 const express = require("express");
-const http = require("http"); //Core HTTP module
+const http = require("http");
 const socketio = require("socket.io");
 const Filter = require("bad-words");
-const translatte = require("translatte");
 const { generateMessage, generateLocation } = require("./utils/messages");
+const translateRoutes = require("./routes/translate");
 const {
   addUser,
   removeUser,
@@ -14,10 +14,11 @@ const {
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
 
-app.set("view engine", "ejs");
+app.use(translateRoutes);
 app.use(express.static(path.join(__dirname, "./views")));
+
+const io = socketio(server);
 
 io.on("connection", (socket) => {
   console.log("New user connected!");
@@ -90,30 +91,6 @@ io.on("connection", (socket) => {
 
 io.on("translate", (socket) => {
   console.log("connect");
-});
-
-app.get("/hi", (req, res) => {
-  res.render("index");
-});
-
-app.get("/translated", (req, res) => {
-  if (!req.query.inputstring) {
-    res.send({
-      error: "Please provide some input text",
-    });
-  } else {
-    const inputstring = req.query.inputstring;
-    const source_lan = req.query.source_lan;
-    const res_lan = req.query.res_lan;
-    translatte(inputstring, { from: source_lan, to: res_lan })
-      .then((translated_res) => {
-        res.send({ translatedText: translated_res.text });
-        console.log(translated_res.text);
-      })
-      .catch((err) => {
-        return err;
-      });
-  }
 });
 
 const PORT = process.env.PORT || 3000;
