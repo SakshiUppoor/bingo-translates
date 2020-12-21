@@ -1,12 +1,26 @@
+import fs from "fs";
+
 const container = document.getElementsByClassName("container")[0];
-const original_words = [
-  "Thankyou",
-  "What is the cost?",
-  "Do you speak English?",
-  "Can you help me?",
-  "Sorry",
-  "Nice to meet you!",
-];
+
+const content = fs.readFileSync("../data.json");
+const src = $("#my-language").val();
+const dest = $("#learn-lang").val();
+
+const words = content[src];
+const translated_words = content[dest];
+
+for (i = 0; i < 6; i++) {
+  const word = words[i];
+  const translated_word = translated_words[i];
+
+  const panel = `<div class="panel p1"><div class="translation"><div class="translated">${translated_word}<div class="speaker speaker-button" onclick='readOutLoud(
+         "${translated_word}",
+          "${dest}"
+        )' ><ion-icon  id="speakme${
+          i + 1
+        }" name="volume-high"></ion-icon></div></div></div><div class="origin">${word}</div></div>`;
+  container.innerHTML = container.innerHTML + panel;
+}
 
 original_words.forEach((word, i) => {
   translation = fetch(
@@ -26,6 +40,34 @@ original_words.forEach((word, i) => {
     })
     .catch((e) => console.log(e));
 });
+
+// const original_words = [
+//   "Thankyou",
+//   "What is the cost?",
+//   "Do you speak English?",
+//   "Can you help me?",
+//   "Sorry",
+//   "Nice to meet you!",
+// ];
+
+// original_words.forEach((word, i) => {
+//   translation = fetch(
+//     `http://localhost:3000/translated?source_lan=en&res_lan=hi&inputstring=${word}`
+//   )
+//     .then((res) => {
+//       res.json().then((data) => {
+//         const result = data.translatedText;
+//         const panel = `<div class="panel p1"><div class="translation"><div class="translated">${result}<div class="speaker speaker-button" onclick='readOutLoud(
+//          "${result}",
+//           "hi"
+//         )' ><ion-icon  id="speakme${
+//           i + 1
+//         }" name="volume-high"></ion-icon></div></div><div class="pronunciation">dhanyavaad</div></div><div class="origin">${word}</div></div>`;
+//         container.innerHTML = container.innerHTML + panel;
+//       });
+//     })
+//     .catch((e) => console.log(e));
+// });
 
 // const speakme1 = document.getElementById("speakme1");
 // speakme1.addEventListener("click", () => {
