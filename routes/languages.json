@@ -1,0 +1,13 @@
+{
+  "en": { "lang": "English", "code": 0 },
+  "hi": { "lang": "Hindi", "code": 1 },
+  "mr": { "lang": "Marathi", "code": 2 },
+  "gu": { "lang": "Gujrathi", "code": 3 },
+  "kn": { "lang": "Kannada", "code": 4 },
+  "ml": { "lang": "Malayalam", "code": 5 },
+  "de": { "lang": "German", "code": 6 },
+  "ru": { "lang": "Russian", "code": 7 },
+  "es": { "lang": "Spanish", "code": 8 },
+  "ta": { "lang": "Tamil", "code": 9 },
+  "te": { "lang": "Telugu", "code": 10 }
+}
