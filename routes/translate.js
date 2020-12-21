@@ -68,43 +68,44 @@ router.get("/getQuestions", (req, res) => {
 
 // This route is slow, so please have some patience, Thanks!
 router.get("/generateQuiz/:source_lan/:res_lan", async (req, res) => {
-  console.log("Here");
-  const source_lan = req.params.source_lan;
-  const res_lan = req.params.res_lan;
-  const words = [
-    "Hello",
-    "Thankyou",
-    "Greetings",
-    "Welcome",
-    "Good morning",
-    "How are you ?",
-    "Goodluck",
-  ];
+  try {
+    const source_lan = req.params.source_lan;
+    const res_lan = req.params.res_lan;
+    const words = [
+      "Hello",
+      "Thankyou",
+      "Greetings",
+      "Welcome",
+      "Good morning",
+      "How are you ?",
+      "Goodluck",
+    ];
 
-  const result = [];
-  await words.forEach(async (word, idx) => {
-    await translatte(word, { from: source_lan, to: res_lan })
-      .then(async (translated_res) => {
-        result.push({ text: translated_res.text, idx });
-        if (result.length == words.length) {
-          // We had to sort this as the received response was in random order
+    const result = [];
+    await words.forEach(async (word, idx) => {
+      await translatte(word, { from: source_lan, to: res_lan }).then(
+        async (translated_res) => {
+          result.push({ text: translated_res.text, idx });
+          if (result.length == words.length) {
+            // We had to sort this as the received response was in random order
 
-          await result.sort((a, b) => {
-            return a.idx > b.idx ? 1 : -1;
-          });
+            await result.sort((a, b) => {
+              return a.idx > b.idx ? 1 : -1;
+            });
 
-          const finalResult = [];
-          result.forEach((item) => {
-            finalResult.push(item.text);
-          });
+            const finalResult = [];
+            result.forEach((item) => {
+              finalResult.push(item.text);
+            });
 
-          return res.send(finalResult);
+            return res.send(finalResult);
+          }
         }
-      })
-      .catch((e) => {
-        res.send(e);
-      });
-  });
+      );
+    });
+  } catch (e) {
+    res.send(e);
+  }
 });
 
 module.exports = router;
