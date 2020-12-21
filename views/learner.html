@@ -57,8 +57,9 @@
     <div class="title">Learn</div>
     <div class="control">
       <div class="my-language">
+        <!-- <form> -->
         I speak
-        <select id="my-lang">
+        <select onchange="learner()" id="my-lang">
           <option value="en">English</option>
           <option value="de">German</option>
           <option value="gu">Gujrati</option>
@@ -72,7 +73,7 @@
           <option value="te">Telugu</option>
         </select>
         learning
-        <select id="learn-lang">
+        <select onchange="learner()" id="learn-lang">
           <option value="hi">हिंदी</option>
           <option value="en">English</option>
           <option value="de">German</option>
@@ -85,85 +86,14 @@
           <option value="ta">Tamil</option>
           <option value="te">Telugu</option>
         </select>
+        <!-- <button type="submit">go</button> -->
+        <!-- </form> -->
       </div>
     </div>
-    <div class="container">
-      <!-- <div class="panel p1">
-        <div class="translation">
-          <div class="translated">
-            धन्यवाद
-            <div class="speaker" id="speakme1">
-              <ion-icon name="volume-high"></ion-icon>
-            </div>
-          </div>
-          <div class="pronunciation">dhanyavaad</div>
-        </div>
-        <div class="origin">Thank you</div>
-      </div> -->
-      <!-- <div class="panel p2">
-        <div class="translation">
-          <div class="translated">
-            क्या भाव है?
-            <div class="speaker" id="speakme2">
-              <ion-icon name="volume-high"></ion-icon>
-            </div>
-          </div>
-          <div class="pronunciation">kya bhaav hai?</div>
-        </div>
-        <div class="origin">What is the cost?</div>
-      </div> -->
-      <!-- <div class="panel p3">
-        <div class="translation">
-          <div class="translated">
-            क्या आप अंग्रेज़ी बोलते हैं?
-            <div class="speaker" id="speakme3">
-              <ion-icon name="volume-high"></ion-icon>
-            </div>
-          </div>
-          <div class="pronunciation">kya aap angrezee bolate hain?</div>
-        </div>
-        <div class="origin">Do you speak English?</div>
-      </div>
-      <div class="panel p4">
-        <div class="translation">
-          <div class="translated">
-            क्या आप मेरी मदद कर सकते हैं?
-            <div class="speaker" id="speakme4">
-              <ion-icon name="volume-high"></ion-icon>
-            </div>
-          </div>
-          <div class="pronunciation">kya aap meree madad kar sakate hain?</div>
-        </div>
-        <div class="origin">Can you help me?</div>
-      </div>
-      <div class="panel p1">
-        <div class="translation">
-          <div class="translated">
-            माफ़ करना
-            <div class="speaker" id="speakme5">
-              <ion-icon name="volume-high"></ion-icon>
-            </div>
-          </div>
-          <div class="pronunciation">maaf karana</div>
-        </div>
-        <div class="origin">Sorry / Excuse Me</div>
-      </div>
-      <div class="panel p1">
-        <div class="translation">
-          <div class="translated">
-            आपसे मिलकर अच्छा लगा!
-            <div class="speaker" id="speakme6">
-              <ion-icon name="volume-high"></ion-icon>
-            </div>
-          </div>
-          <div class="pronunciation">aapase milakar achchha laga!</div>
-        </div>
-        <div class="origin">Nice to meet you!</div>
-      </div> -->
-    </div>
+    <div class="container"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="./static/js/translate-client.js"></script>
     <script src="./static/js/data.js"></script>
-    <script type="module" src="./static/js/learner_page.js"></script>
+    <script src="./static/js/learner_page.js"></script>
   </body>
 </html>
