@@ -2,6 +2,7 @@ const express = require("express");
 const translatte = require("translatte");
 const router = express();
 const fs = require("fs");
+const {createUUID} = require("../utils/uuid");
 
 router.get("/translated", (req, res) => {
   if (!req.query.inputstring) {
@@ -46,7 +47,9 @@ router.get("/getQuestions", (req, res) => {
       for (let i = 0; i < count; i++) {
         const current_word = words[source.code][i];
         const answer = words[response.code][i];
-        const question = `What is the ${response.lang} word for '${current_word}' ?`;
+        const question_id = createUUID();
+        console.log(question_id);
+        const question = `What is the ${response.lang} word for '${current_word}'?`;
         const options = [answer];
 
         while (options.length < 4) {
@@ -56,7 +59,7 @@ router.get("/getQuestions", (req, res) => {
         options.sort(function () {
           return Math.random() - 0.5;
         });
-        const obj = { question, answer, options };
+        const obj = { question_id, question, answer, options };
         result.push(obj);
       }
       return res.send(result);
