@@ -5,6 +5,7 @@
        <link rel="icon" href="../static/img/favicon.png">
        <link rel="stylesheet" href="../static/css/styles.min.css">
        <link rel="stylesheet" href="../static/css/chat.css">
+       
     </head>
     <body data-title="my_chat_page">
         <div class ="chat">
@@ -27,12 +28,13 @@
         </div>
       
         <script id="message-template" type="text/html">
-            <div class="message">
+            <div class="message" id={{message_id}}>
                 <p>
                     <span class="message__name">{{username}}</span>
                     <span class="message_meta">{{createdAt}}</span>
                 </p>
                 <p>{{message}}</p>
+                <!-- <button class="text-secondary" onClick={myFunction()}>Translate!</button> -->
             </div>
         </script>
 
