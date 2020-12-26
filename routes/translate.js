@@ -2,6 +2,7 @@ const express = require("express");
 const translatte = require("translatte");
 const router = express();
 const fs = require("fs");
+const e = require("express");
 const {createUUID} = require("../utils/uuid");
 
 router.get("/translated", (req, res) => {
@@ -72,6 +73,7 @@ router.get("/getQuestions", (req, res) => {
 // This route is slow, so please have some patience, Thanks!
 router.get("/generateQuiz/:source_lan/:res_lan", async (req, res) => {
   try {
+    console.log(req.params);
     const source_lan = req.params.source_lan;
     const res_lan = req.params.res_lan;
     const words = [
@@ -86,8 +88,9 @@ router.get("/generateQuiz/:source_lan/:res_lan", async (req, res) => {
 
     const result = [];
     await words.forEach(async (word, idx) => {
-      await translatte(word, { from: source_lan, to: res_lan }).then(
-        async (translated_res) => {
+      await translatte(word, { from: source_lan, to: res_lan })
+        .then(async (translated_res) => {
+          console.log(translated_res);
           result.push({ text: translated_res.text, idx });
           if (result.length == words.length) {
             // We had to sort this as the received response was in random order
@@ -103,8 +106,11 @@ router.get("/generateQuiz/:source_lan/:res_lan", async (req, res) => {
 
             return res.send(finalResult);
           }
-        }
-      );
+        })
+        .catch((e) => {
+          console.log(e);
+          throw e;
+        });
     });
   } catch (e) {
     res.send(e);
