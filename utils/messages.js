@@ -1,5 +1,6 @@
 const generateMessage = (username , text)=>{
     return {
+        message_id: createUUID(),
         username : username,
         text : text,
         createdAt : new Date().getTime()
@@ -8,6 +9,7 @@ const generateMessage = (username , text)=>{
 
 const generateLocation= (username ,locationlink)=>{
     return {
+        message_id: createUUID(),
         username,
         locationlink ,
         createdAt :new Date().getTime()

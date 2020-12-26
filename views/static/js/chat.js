@@ -31,6 +31,7 @@ socket.on("message", (message) => {
     username: message.username,
     message: message.text,
     createdAt: moment(message.createdAt).format("h:mm a"),
+    message_id: message.message_id,
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
@@ -83,7 +84,7 @@ translatebtn.addEventListener("click", (e) => {
 
   const message = document.querySelector("input").value;
   const input = document.getElementById("input");
-  input.value = translateme(message, room, res_language);
+  input.value = translateme(message, res_language, room);
 });
 
 locationbutton.addEventListener("click", () => {
@@ -114,3 +115,15 @@ socket.emit("join", { username, room }, (error) => {
     location.href = "/";
   }
 });
+
+function translateToNative(message_id) {
+  chatMessage = document.getElementById(`text_${message_id}`);
+  message = chatMessage.innerHTML;
+  fetch(
+    `http://localhost:3000/translated?source_lan=${room}&res_lan=${res_language}&inputstring=${message}`
+  ).then((res) => {
+    res.json().then((data) => {
+      chatMessage.innerHTML = data.translatedText;
+    });
+  });
+}

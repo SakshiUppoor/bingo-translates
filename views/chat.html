@@ -28,13 +28,13 @@
         </div>
       
         <script id="message-template" type="text/html">
-            <div class="message" id={{message_id}}>
+            <div class="message" id="{{message_id}}">
                 <p>
                     <span class="message__name">{{username}}</span>
                     <span class="message_meta">{{createdAt}}</span>
                 </p>
-                <p>{{message}}</p>
-                <!-- <button class="text-secondary" onClick={myFunction()}>Translate!</button> -->
+                <p id="text_{{message_id}}">{{message}}</p>
+                <button class="text-secondary" onClick="translateToNative('{{message_id}}')">Translate!</button>
             </div>
         </script>
 
