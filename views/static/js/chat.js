@@ -118,12 +118,23 @@ socket.emit("join", { username, room }, (error) => {
 
 function translateToNative(message_id) {
   chatMessage = document.getElementById(`text_${message_id}`);
+  translation = document.getElementById(`translation_${message_id}`);
   message = chatMessage.innerHTML;
   fetch(
     `http://localhost:3000/translated?source_lan=${room}&res_lan=${res_language}&inputstring=${message}`
   ).then((res) => {
     res.json().then((data) => {
-      chatMessage.innerHTML = data.translatedText;
+      translation.innerHTML = data.translatedText;
     });
   });
+}
+
+function hello(e, message_id) {
+  viewSummary = document.getElementById(`view_${message_id}`);
+  if(!e.open) viewSummary.innerHTML="Hide translation";
+  else viewSummary.innerHTML="View translation";
+  if(!e.open && document.getElementById(`translation_${message_id}`).innerHTML=="") {
+    document.getElementById(`translation_${message_id}`).innerHTML="Translating...";
+    translateToNative(message_id);
+  }
 }
