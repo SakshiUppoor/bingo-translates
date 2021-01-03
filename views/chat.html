@@ -50,12 +50,18 @@
         </script>
 
         <script id="location-template" type="text/html">
-            <div class="message">
-                 <p>
-                    <span class="message__name">{{username}}</span>
-                    <span class="message_meta">{{createdAt}}</span>
-                </p>
-                <p><a href="{{locationlink}}" target="another">My Current Location</a></p>    
+            <div class="message-container row">
+                <div class="profile-pic-container col-1">
+                    <div class="profile-pic">
+                        <img src="https://wayou.github.io/anonymous-animals/icons/Nyan%20Cat.png" width="100%"></div>
+                    </div>
+                <div class="message col-11" id="{{message_id}}">
+                    <p>
+                        <span class="message__name">{{username}}</span>
+                        <span class="message__meta">{{createdAt}}</span>
+                    </p>
+                    <p><a href="{{locationlink}}" target="another">My Current Location</a></p>  
+                </div>
             </div>
         </script>
 
