@@ -1,6 +1,7 @@
 const socket = io();
 
 //Elements
+const chatRoomTitle = document.querySelector("#chatroom__title");
 const messageForm = document.querySelector("#message_form");
 const messageFormInput = messageForm.querySelector("#input");
 const messageFormButton = messageForm.querySelector("#button");
@@ -11,6 +12,20 @@ const messages = document.querySelector("#messages");
 const messageTemplate = document.querySelector("#message-template").innerHTML;
 const locationTemplate = document.querySelector("#location-template").innerHTML;
 const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
+
+const languages = {
+  "en": "English",
+  "hi": "Hindi",
+  "mr": "Marathi",
+  "gu": "Gujrathi",
+  "kn": "Kannada",
+  "ml": "Malayalam",
+  "de": "German",
+  "ru": "Russian",
+  "es": "Spanish",
+  "ta": "Tamil",
+  "te": "Telugu"
+}
 
 //Options --This is the qs library whose link we've included in the html file
 //location.search is a browser side tool which gives us the querystring
@@ -77,6 +92,9 @@ messageForm.addEventListener("submit", (e) => {
     }
   });
 });
+
+const chatRoomName=languages[room] + " Chatroom";
+chatRoomTitle.innerHTML = chatRoomName;
 
 const translatebtn = document.querySelector("#button_trans");
 translatebtn.addEventListener("click", (e) => {

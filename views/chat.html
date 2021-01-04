@@ -10,18 +10,26 @@
     <body data-title="my_chat_page">
         <div class ="chat">
             <div class ="chat__sidebar" id="sidebar">
-
+                
             </div>
             <div class="chat__main">
+                <div id="chatroom__title"></div>
                 <div id="messages" class="chat__messages"></div>
 
                 <div class="compose">
                     <form id="message_form">
                         <input placeholder="Enter your message here" id="input" name="message" required autocomplete="off">
-                        <br>
-                        <span id="locationbutton" class="ml-auto"><ion-icon style="color: #888;" name="location-sharp"></ion-icon></span>
-                        <button id="button_trans" class="secondary">Translate</button>
-                        <button id="button" type="submit" class="primary">Send</button>
+                        <div class="d-flex flex-row-reverse message__buttons">
+                            <div class="">
+                                <button id="button" type="submit" class="primary">Send</button>
+                            </div>
+                            <div class="">
+                                <button id="locationbutton" class="ml-auto secondary">Send location</button>
+                            </div>
+                            <div class="trans-button-container">
+                               <button id="button_trans" class="secondary">Translate</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
@@ -35,16 +43,15 @@
                         <img src="https://wayou.github.io/anonymous-animals/icons/Nyan%20Cat.png" width="100%"></div>
                     </div>
                 <div class="message col-11" id="{{message_id}}">
-                    <p>
+                    <p style="margin-bottom: 0;">
                         <span class="message__name">{{username}}</span>
                         <span class="message__meta">{{createdAt}}</span>
                     </p>
-                    <p id="text_{{message_id}}" class="chat_message">{{message}}</p>
+                    <p id="text_{{message_id}}" class="chat_message" >{{message}}</p>
                     <details onClick="hello(this, '{{message_id}}')">
                         <summary id="view_{{message_id}}">View translation</summary>
                         <p id="translation_{{message_id}}" class="translation"></p>
                     </details>
-                    <!-- <button class="text-secondary" onClick="translateToNative('{{message_id}}')">Translate!</button> -->
                 </div>
             </div>
         </script>
@@ -56,19 +63,20 @@
                         <img src="https://wayou.github.io/anonymous-animals/icons/Nyan%20Cat.png" width="100%"></div>
                     </div>
                 <div class="message col-11" id="{{message_id}}">
-                    <p>
+                    <p style="margin-bottom: 0;">
                         <span class="message__name">{{username}}</span>
                         <span class="message__meta">{{createdAt}}</span>
                     </p>
-                    <p><a href="{{locationlink}}" target="another">My Current Location</a></p>  
+                    <p><a href="{{locationlink}}" target="another" class="location__link">My Current Location</a></p>  
                 </div>
             </div>
         </script>
 
         <script id="sidebar-template" type="text/html">
-                <h2 class="room-title">{{room}}</h2>
-                <h3 class="list-title">Users</h3>
+                <!-- <h2 class="room-title">{{room}}</h2> -->
+                <h3 class="list-title">🙍‍♂️🙍‍♀️ Users ({{users.length}})</h3>
                 <ul class="users">
+                    <li>Bingo! </li>
                     {{#users}}
                         <li>{{username}}</li>
                     {{/users}}

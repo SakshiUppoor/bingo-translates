@@ -51,6 +51,10 @@ button:hover {
     background: #6b47b8;
 }
 
+button:focus {
+    outline: none !important;
+}
+
 button:disabled {
     cursor: default;
     background: #7c5cbf94;
@@ -90,10 +94,11 @@ button:disabled {
 }
 
 .chat__sidebar {
+    /* height: calc(100vh - 58px); */
     height: 100vh;
     color: white;
     background: #333744;
-    width: 225px;
+    width: 1000px;
     overflow-y: scroll
 }
 
@@ -103,6 +108,7 @@ button:disabled {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    /* max-height: calc(100vh - 58px); */
     max-height: 100vh;
 }
 
@@ -120,7 +126,7 @@ button:disabled {
 
 .message__name {
     font-weight: 600;
-    font-size: 23px;
+    font-size: 20px;
     margin-right: 8px;
     text-transform: capitalize;
     color: #333744;
@@ -152,10 +158,10 @@ button:disabled {
 }
 
 .compose input {
-    border: 1px solid #eeeeee;
+    border: 1px solid #c9c9c9;
     width: 100%;
     padding: 12px;
-    margin: 0 16px 0 0;
+    margin: 0 16px 20px 0;
     flex-grow: 1;
 }
 
@@ -174,7 +180,7 @@ button:disabled {
 
 .list-title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 23px;
     margin-bottom: 4px;
     padding: 12px 24px 0 24px;
 }
@@ -183,4 +189,8 @@ button:disabled {
     list-style-type: none;
     font-weight: 300;
     padding: 12px 24px 0 24px;
+}
+
+.location__link {
+    color: #6b47b8 !important;
 }

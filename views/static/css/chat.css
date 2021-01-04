@@ -22,7 +22,7 @@ summary {
 }
 
 .chat_message {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .secondary {
@@ -36,4 +36,33 @@ summary {
 .primary {
     border-radius: 5px;
     /* max-width: 400px; */
+}
+
+.users {
+    text-transform: capitalize;
+}
+
+.secondary:hover {
+    border: #6b47b8;
+    color: #fff;
+}
+
+#locationbutton {
+    margin: 0 1em;
+}
+
+.trans-button-container {
+    margin-right: auto;
+}
+
+.trans-button-container button {
+    margin-left: 0 !important;
+}
+
+#chatroom__title {
+    text-align: center;
+    border-bottom: 1px solid #eeeeee;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 500;
 }
