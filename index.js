@@ -3,7 +3,11 @@ const express = require("express");
 const http = require("http");
 const socketio = require("socket.io");
 const Filter = require("bad-words");
-const { generateMessage, generateLocation } = require("./utils/messages");
+const {
+  generateMessage,
+  generateLocation,
+  freeAvatar,
+} = require("./utils/messages");
 const translateRoutes = require("./routes/translate");
 const {
   addUser,
@@ -32,10 +36,23 @@ io.on("connection", (socket) => {
 
     socket.join(user.room);
 
-    socket.emit("message", generateMessage("Bingo!", "Welcome"));
+    socket.emit(
+      "message",
+      generateMessage(
+        { id: "admin_id", username: "Bingo!", room: user.room },
+        "Welcome"
+      )
+    );
     socket.broadcast
       .to(user.room)
-      .emit("message", generateMessage("Bingo!", `${username} has joined!`)); //Sends message to everyone except the user who has joined
+      .emit(
+        "message",
+        generateMessage(
+          { id: "admin_id", username: "Bingo!", room: user.room },
+          `${username} has joined!`
+        )
+      ); //Sends message to everyone except the user who has joined
+
     io.to(user.room).emit("roomData", {
       room: user.room,
       users: getUsersInRoom(user.room),
@@ -51,12 +68,15 @@ io.on("connection", (socket) => {
     if (filter.isProfane(message)) {
       socket.emit(
         "message",
-        generateMessage("Bingo!", "Please maintain decent language!")
+        generateMessage(
+          { id: "admin_id", username: "Bingo!", room: user.room },
+          "Please maintain decent language!"
+        )
       );
       return callback("PLease maintain your language.Profanity is prohibited!");
     }
-
-    io.to(user.room).emit("message", generateMessage(user.username, message));
+    console.log("Heyy", user);
+    io.to(user.room).emit("message", generateMessage(user, message));
     callback();
   });
 
@@ -79,7 +99,10 @@ io.on("connection", (socket) => {
     if (user) {
       io.to(user.room).emit(
         "message",
-        generateMessage("Admin", `${user.username} has left!`)
+        generateMessage(
+          { id: "admin_id", username: "Bingo!", room: user.room },
+          `${user.username} has left!`
+        )
       );
       io.to(user.room).emit("roomData", {
         room: user.room,

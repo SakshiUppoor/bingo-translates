@@ -14,18 +14,18 @@ const locationTemplate = document.querySelector("#location-template").innerHTML;
 const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
 
 const languages = {
-  "en": "English",
-  "hi": "Hindi",
-  "mr": "Marathi",
-  "gu": "Gujrathi",
-  "kn": "Kannada",
-  "ml": "Malayalam",
-  "de": "German",
-  "ru": "Russian",
-  "es": "Spanish",
-  "ta": "Tamil",
-  "te": "Telugu"
-}
+  en: "English",
+  hi: "Hindi",
+  mr: "Marathi",
+  gu: "Gujrathi",
+  kn: "Kannada",
+  ml: "Malayalam",
+  de: "German",
+  ru: "Russian",
+  es: "Spanish",
+  ta: "Tamil",
+  te: "Telugu",
+};
 
 //Options --This is the qs library whose link we've included in the html file
 //location.search is a browser side tool which gives us the querystring
@@ -47,6 +47,7 @@ socket.on("message", (message) => {
     message: message.text,
     createdAt: moment(message.createdAt).format("h:mm a"),
     message_id: message.message_id,
+    photo: message.photo,
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
@@ -93,7 +94,7 @@ messageForm.addEventListener("submit", (e) => {
   });
 });
 
-const chatRoomName=languages[room] + " Chatroom";
+const chatRoomName = languages[room] + " Chatroom";
 chatRoomTitle.innerHTML = chatRoomName;
 
 const translatebtn = document.querySelector("#button_trans");
@@ -149,10 +150,14 @@ function translateToNative(message_id) {
 
 function hello(e, message_id) {
   viewSummary = document.getElementById(`view_${message_id}`);
-  if(!e.open) viewSummary.innerHTML="Hide translation";
-  else viewSummary.innerHTML="View translation";
-  if(!e.open && document.getElementById(`translation_${message_id}`).innerHTML=="") {
-    document.getElementById(`translation_${message_id}`).innerHTML="Translating...";
+  if (!e.open) viewSummary.innerHTML = "Hide translation";
+  else viewSummary.innerHTML = "View translation";
+  if (
+    !e.open &&
+    document.getElementById(`translation_${message_id}`).innerHTML == ""
+  ) {
+    document.getElementById(`translation_${message_id}`).innerHTML =
+      "Translating...";
     translateToNative(message_id);
   }
 }

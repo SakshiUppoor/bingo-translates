@@ -3,7 +3,7 @@ const translatte = require("translatte");
 const router = express();
 const fs = require("fs");
 const e = require("express");
-const {createUUID} = require("../utils/uuid");
+const { createUUID } = require("../utils/uuid");
 
 router.get("/translated", (req, res) => {
   if (!req.query.inputstring) {
@@ -37,8 +37,8 @@ router.get("/getQuestions", (req, res) => {
       // {0 - English(en),1 - Hindi(hi), 2 - Marathi(mr),3- Gujrati(gu),4-Kannada(kn)
       // ,5-Malayalam(ml),6-German(de),7-Russian(ru),8-Spanish(es),9-Tamil(ta),10-Telugu(te)}
 
-      const words = require("./quizData.json");
-      const languageMap = require("./languages.json");
+      const words = require("../jsonData/quizData.json");
+      const languageMap = require("../jsonData/languages.json");
 
       const source = languageMap[req.query.source_lan];
       const response = languageMap[req.query.res_lan];
