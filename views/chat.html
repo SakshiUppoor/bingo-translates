@@ -39,8 +39,8 @@
         <script id="message-template" type="text/html">
             <div class="message-container row">
                 <div class="profile-pic-container col-1">
-                    <div class="profile-pic">
-                        <img src={{photo}} width="100%"></div>
+                    <div style="background-color:{{color}};" class="profile-pic">
+                        <img  src={{photo}} width="100%"></div>
                     </div>
                 <div class="message col-11" id="{{message_id}}">
                     <p style="margin-bottom: 0;">
@@ -59,15 +59,15 @@
         <script id="location-template" type="text/html">
             <div class="message-container row">
                 <div class="profile-pic-container col-1">
-                    <div class="profile-pic">
-                        <img src="https://wayou.github.io/anonymous-animals/icons/Nyan%20Cat.png" width="100%"></div>
+                    <div style="background-color:{{color}};" class="profile-pic">
+                        <img src={{photo}} width="100%"></div>
                     </div>
                 <div class="message col-11" id="{{message_id}}">
                     <p style="margin-bottom: 0;">
                         <span class="message__name">{{username}}</span>
                         <span class="message__meta">{{createdAt}}</span>
                     </p>
-                    <p><a href="{{locationlink}}" target="another" class="location__link">My Current Location</a></p>  
+                    <p><a href="{{text}}" target="another" class="location__link">My Current Location</a></p>  
                 </div>
             </div>
         </script>
