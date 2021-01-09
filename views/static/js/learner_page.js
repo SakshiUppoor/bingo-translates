@@ -14,7 +14,7 @@ function learner() {
     const translated_word = translated_words[i];
 
     const panel = `
-      <div class="panel col-xs-10 col-sm-5 mt-3" style="margin:auto;">
+      <div class="panel col-xs-10 col-sm-5 mt-2 mb-2" style="margin:auto;">
         <div class="translation">
           <div class="translated">
             ${translated_word}

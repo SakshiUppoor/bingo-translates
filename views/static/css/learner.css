@@ -80,10 +80,6 @@ select {
   display: inline-block;
 }
 
-.control {
-  text-align: center;
-}
-
 .butt1 {
   background-color: #4caf50; /* Green */
   border: none;
