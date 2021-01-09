@@ -48,6 +48,7 @@ socket.on("message", (message) => {
     createdAt: moment(message.createdAt).format("h:mm a"),
     message_id: message.message_id,
     photo: message.photo,
+    color: message.color,
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
