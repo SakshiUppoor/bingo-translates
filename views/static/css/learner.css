@@ -94,3 +94,18 @@ select {
   display: inline-block;
   font-size: 16px;
 }
+
+@media only screen and (max-width: 600px) {
+  .panel {
+    font-weight: 500;
+    width: 80% !important;
+    font-size: 20px;
+  }
+
+  .translated {
+    font-size: 12px;
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+  }
+}
