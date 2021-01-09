@@ -75,7 +75,6 @@ io.on("connection", (socket) => {
       );
       return callback("PLease maintain your language.Profanity is prohibited!");
     }
-    console.log("Heyy", user);
     io.to(user.room).emit("message", generateMessage(user, message));
     callback();
   });
