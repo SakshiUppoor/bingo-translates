@@ -1,168 +1,87 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-/* *{
-    background: #f1f1f1;
-} */
 body {
   background-color: #f1f1f1 !important;
+  font-family: "Roboto", sans-serif;
 }
 #container {
   margin-top: 35px;
 }
 
-.row1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.outer,
+.outer2 {
+  margin-top: 15px;
 }
 
-.textbox1 {
-  z-index: 1;
-}
-.textbox2 {
-  /* -webkit-box-shadow: 10px 9px 11px -11px #676767; 
-box-shadow: 10px 9px 11px -11px #676767; */
-  z-index: 1;
-}
-.textarea {
-  margin-bottom: 0;
+textarea {
+  background-color: #fff !important;
+  width: 100%;
+  padding: 0px 20px;
+  overflow-y: auto;
   border: none;
-  resize: none;
-  padding: 10px !important;
+  outline: none;
+  -webkit-box-shadow: 10px 9px 11px -11px #676767;
+  box-shadow: 10px 9px 11px -11px #676767;
 }
 
 textarea:focus {
-  outline: none;
-  /* border-top: 3px solid #0F2B46;
-    border-left: 3px solid #0F2B46;
-    border-right: 3px solid #0F2B46; */
-}
-select:focus {
+  border: none;
   outline: none;
 }
-#swap {
-  z-index: 2;
-}
+
 .dropdown {
+  outline: 0;
   border: none;
+  background-color: transparent;
+  border-color: #4284f2;
+  color: #4284f2;
   font-style: italic;
-  color: #2447c6;
-  font-size: 100%;
-  width: 325px;
+  transition: all 0.4s ease;
 }
-.original {
-  margin-left: auto;
-  margin-right: 10px;
-  margin-bottom: 0;
-}
-.original p {
-  font-size: 150%;
-  font-family: "Ubuntu", sans-serif;
-}
-.translated p {
-  font-size: 150%;
-  font-family: "Ubuntu", sans-serif;
-}
-select {
-  background: #f1f1f1;
-}
-select:hover {
-  color: #006494;
-}
-.doc {
-  background: white;
-  border: none;
-  font-family: "Ubuntu", sans-serif;
-  margin-top: 0;
-  color: #0f2b46;
-}
-.doc:hover,
-ion-icon:hover {
-  color: #006494;
-  cursor: pointer;
-}
-.doc:focus {
-  outline: none;
-}
-.row1 {
-  margin-bottom: 0;
-}
-.outer {
-  background: white;
-  margin-left: auto;
-  margin-right: 10px;
-  -webkit-box-shadow: 10px 9px 11px -11px #676767;
-  box-shadow: 10px 9px 11px -11px #676767;
-}
-.outer:focus {
-  outline: 3px solid #0f2b46;
-}
-.outer2 {
-  background: white;
-  margin-right: auto;
-  margin-left: 0px;
-  float: left;
-  -webkit-box-shadow: 10px 9px 11px -11px #676767;
-  box-shadow: 10px 9px 11px -11px #676767;
-}
-.mic {
-  float: right;
-  margin-left: auto;
-  margin-right: 10px;
-  font-size: 120%;
-}
-.original p,
-.translated p {
-  /* color: hsl(209, 32%, 44%); 
-  font-family: "Pacifico", cursive;*/
-  font-size: 200%;
-}
-/* .original{
-    color:#1c77cc;
-} */
 
-#navbarNavDropdown {
-  position: fixed;
-  right: 1em;
-}
-.snatch {
-  height: 30%;
-  width: 50%;
-}
-textarea:disabled {
-  background-color: #fff !important;
-}
-ion-icon {
-  font-size: 200%;
-}
 .right {
-  margin-right: 15px !important ;
-  margin-top: 15px !important ;
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 5px;
+  font-size: x-large;
+  background-color: #fff;
 }
-.button {
-  color: white;
-  padding: 7px 0px;
 
-  border-radius: 5px;
-  font-family: "Ubuntu", sans-serif;
-  margin-top: 55px;
-  width: 12%;
-  height: 20%;
-  border: none;
+.right button,
+.right span {
+  margin: 0px 4px;
+  cursor: pointer;
+  color: rgb(110, 107, 107);
+}
+.right button:hover,
+.right span:hover {
+  color: black;
+}
+
+.text-head {
+  font-size: large;
+}
+
+#translate-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
   outline: none;
-  background: #1d96ff;
-  background: -moz-linear-gradient(left, #1d96ff 0%, #234df3 50%, #151e48 100%);
-  background: -webkit-linear-gradient(
-    left,
-    #1d96ff 0%,
-    #234df3 50%,
-    #151e48 100%
-  );
-  background: linear-gradient(to right, #1d96ff 0%, #234df3 50%, #151e48 100%);
+  border: none;
+  font-size: large;
+  padding: 7px 10px;
+  background-color: transparent;
+  color: #4284f2;
+  border-radius: 4px;
+  border: 1px solid #4284f2;
+  transition: all 0.3s ease;
 }
 
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+#translate-btn:hover,
+#translate-btn:active {
+  background-color: #4284f2;
+  color: white;
+  border: 1px solid transparent;
+}
+#translate-btn:active {
+  transform: translateY(5%);
 }

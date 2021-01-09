@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+/* *{
+    background: #f1f1f1;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f1f1f1 !important;
+}
+#container {
+  margin-top: 35px;
+}
+
+.row1 {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+}
+
+/* Here */
+/* .textbox1 {
+  z-index: 1;
+}
+.textbox2 {
+  z-index: 1;
+} */
+/* .textarea {
+  margin-bottom: 0;
+  border: none;
+  resize: none;
+  padding: 10px !important;
+} */
+
+/* textarea:focus {
+  outline: none;
+} */
+/* to here */
+select:focus {
+  outline: none;
+}
+#swap {
+  z-index: 2;
+}
+.dropdown {
+  border: none;
+  font-style: italic;
+  color: #2447c6;
+  font-size: 100%;
+  width: 325px;
+}
+.original {
+  /* margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 0; */
+}
+.original p {
+  font-size: 150%;
+  font-family: "Ubuntu", sans-serif;
+}
+.translated p {
+  font-size: 150%;
+  font-family: "Ubuntu", sans-serif;
+}
+select {
+  background: #f1f1f1;
+}
+select:hover {
+  color: #006494;
+}
+.doc {
+  background: white;
+  border: none;
+  font-family: "Ubuntu", sans-serif;
+  margin-top: 0;
+  color: #0f2b46;
+}
+.doc:hover,
+ion-icon:hover {
+  color: #006494;
+  cursor: pointer;
+}
+.doc:focus {
+  outline: none;
+}
+.row1 {
+  margin-bottom: 0;
+}
+/* here */
+/* .outer {
+  background: white;
+  margin-left: auto;
+  margin-right: 10px;
+  -webkit-box-shadow: 10px 9px 11px -11px #676767;
+  box-shadow: 10px 9px 11px -11px #676767;
+}
+.outer:focus {
+  outline: 3px solid #0f2b46;
+}
+.outer2 {
+  background: white;
+  margin-right: auto;
+  margin-left: 0px;
+  float: left;
+  -webkit-box-shadow: 10px 9px 11px -11px #676767;
+  box-shadow: 10px 9px 11px -11px #676767;
+} */
+/* .mic {
+  float: right;
+  margin-left: auto;
+  margin-right: 10px;
+  font-size: 120%;
+} */
+/* to here */
+.original p,
+.translated p {
+  /* color: hsl(209, 32%, 44%); 
+  font-family: "Pacifico", cursive;*/
+  font-size: 200%;
+}
+/* .original{
+    color:#1c77cc;
+} */
+
+#navbarNavDropdown {
+  position: fixed;
+  right: 1em;
+}
+.snatch {
+  height: 30%;
+  width: 50%;
+}
+textarea:disabled {
+  background-color: #fff !important;
+}
+ion-icon {
+  font-size: 200%;
+}
+.right {
+  margin-right: 15px !important ;
+  margin-top: 15px !important ;
+}
+.button {
+  color: white;
+  padding: 7px 0px;
+
+  border-radius: 5px;
+  font-family: "Ubuntu", sans-serif;
+  margin-top: 55px;
+  width: 12%;
+  height: 20%;
+  border: none;
+  outline: none;
+  background: #1d96ff;
+  background: -moz-linear-gradient(left, #1d96ff 0%, #234df3 50%, #151e48 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #1d96ff 0%,
+    #234df3 50%,
+    #151e48 100%
+  );
+  background: linear-gradient(to right, #1d96ff 0%, #234df3 50%, #151e48 100%);
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
