@@ -1,5 +1,5 @@
 function learner() {
-  const container = document.getElementsByClassName("container")[0];
+  const words_container = document.getElementsByClassName("words_container")[0];
   const content = data[0];
   const src = $("#my-lang").val();
   const dest = $("#learn-lang").val();
@@ -7,19 +7,33 @@ function learner() {
   const words = content[src];
   const translated_words = content[dest];
 
-  container.innerHTML = "";
+  words_container.innerHTML = "";
 
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; i < translated_words.length; i++) {
     const word = words[i];
     const translated_word = translated_words[i];
 
-    const panel = `<div class="panel p1"><div class="translation"><div class="translated">${translated_word}<div class="speaker speaker-button" onclick='readOutLoud(
+    const panel = `
+      <div class="panel col-xs-10 col-sm-5 mt-3" style="margin:auto;">
+        <div class="translation">
+          <div class="translated">
+            ${translated_word}
+            <div
+              class="speaker speaker-button"
+              onclick='readOutLoud(
          "${translated_word}",
           "${dest}"
-        )' ><ion-icon  id="speakme${
-          i + 1
-        }" name="volume-high"></ion-icon></div></div></div><div class="origin">${word}</div></div>`;
-    container.innerHTML = container.innerHTML + panel;
+        )'
+            >
+              <ion-icon id="speakme${i + 1}" name="volume-high"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="origin">${word}</div>
+      </div>
+      `;
+
+    words_container.innerHTML = words_container.innerHTML + panel;
   }
 }
 
