@@ -3,11 +3,7 @@ const express = require("express");
 const http = require("http");
 const socketio = require("socket.io");
 const Filter = require("bad-words");
-const {
-  generateMessage,
-  generateLocation,
-  freeAvatar,
-} = require("./utils/messages");
+const { generateMessage } = require("./utils/messages");
 const translateRoutes = require("./routes/translate");
 const {
   addUser,
@@ -84,8 +80,8 @@ io.on("connection", (socket) => {
 
     io.to(user.room).emit(
       "locationMessage",
-      generateLocation(
-        user.username,
+      generateMessage(
+        user,
         `https://google.com/maps?q=${position.latitude},${position.longitude})`
       )
     );

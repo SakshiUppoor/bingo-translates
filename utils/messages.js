@@ -19,8 +19,11 @@ const generateMessage = (user, text) => {
       nextAvatarId[user.room] = 0;
       nextAvatarColor[user.room] = 0;
     }
+    // Assigning the avatar and color for the current user
     avatar[user.room][user.username] = nextAvatarId[user.room];
     color[user.room][user.username] = nextAvatarColor[user.room];
+
+    // Updating the colors and avatar for the next user
     nextAvatarColor[user.room]++;
     nextAvatarId[user.room]++;
     if (nextAvatarId[user.room] == links.length) {
@@ -40,16 +43,6 @@ const generateMessage = (user, text) => {
   };
 };
 
-const generateLocation = (username, locationlink) => {
-  return {
-    message_id: createUUID(),
-    username,
-    locationlink,
-    createdAt: new Date().getTime(),
-  };
-};
-
 module.exports = {
   generateMessage,
-  generateLocation,
 };
