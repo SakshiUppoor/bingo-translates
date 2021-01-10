@@ -1,6 +1,7 @@
 const socket = io();
 
 //Elements
+const chatRoomTitle = document.querySelector("#chatroom__title");
 const messageForm = document.querySelector("#message_form");
 const messageFormInput = messageForm.querySelector("#input");
 const messageFormButton = messageForm.querySelector("#button");
@@ -11,6 +12,20 @@ const messages = document.querySelector("#messages");
 const messageTemplate = document.querySelector("#message-template").innerHTML;
 const locationTemplate = document.querySelector("#location-template").innerHTML;
 const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
+
+const languages = {
+  en: "English",
+  hi: "Hindi",
+  mr: "Marathi",
+  gu: "Gujrathi",
+  kn: "Kannada",
+  ml: "Malayalam",
+  de: "German",
+  ru: "Russian",
+  es: "Spanish",
+  ta: "Tamil",
+  te: "Telugu",
+};
 
 //Options --This is the qs library whose link we've included in the html file
 //location.search is a browser side tool which gives us the querystring
@@ -31,6 +46,9 @@ socket.on("message", (message) => {
     username: message.username,
     message: message.text,
     createdAt: moment(message.createdAt).format("h:mm a"),
+    message_id: message.message_id,
+    photo: message.photo,
+    color: message.color,
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
@@ -40,8 +58,11 @@ socket.on("locationMessage", (message) => {
   console.log(message);
   const html = Mustache.render(locationTemplate, {
     username: message.username,
-    locationlink: message.locationlink,
+    text: message.text,
     createdAt: moment(message.createdAt).format("h:mm a"),
+    message_id: message.message_id,
+    photo: message.photo,
+    color: message.color,
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
@@ -77,13 +98,16 @@ messageForm.addEventListener("submit", (e) => {
   });
 });
 
+const chatRoomName = languages[room] + " Chatroom";
+chatRoomTitle.innerHTML = chatRoomName;
+
 const translatebtn = document.querySelector("#button_trans");
 translatebtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   const message = document.querySelector("input").value;
   const input = document.getElementById("input");
-  input.value = translateme(message, room, res_language);
+  input.value = translateme(message, res_language, room);
 });
 
 locationbutton.addEventListener("click", () => {
@@ -114,3 +138,30 @@ socket.emit("join", { username, room }, (error) => {
     location.href = "/";
   }
 });
+
+function translateToNative(message_id) {
+  chatMessage = document.getElementById(`text_${message_id}`);
+  translation = document.getElementById(`translation_${message_id}`);
+  message = chatMessage.innerHTML;
+  fetch(
+    `http://localhost:3000/translated?source_lan=${room}&res_lan=${res_language}&inputstring=${message}`
+  ).then((res) => {
+    res.json().then((data) => {
+      translation.innerHTML = data.translatedText;
+    });
+  });
+}
+
+function hello(e, message_id) {
+  viewSummary = document.getElementById(`view_${message_id}`);
+  if (!e.open) viewSummary.innerHTML = "Hide translation";
+  else viewSummary.innerHTML = "View translation";
+  if (
+    !e.open &&
+    document.getElementById(`translation_${message_id}`).innerHTML == ""
+  ) {
+    document.getElementById(`translation_${message_id}`).innerHTML =
+      "Translating...";
+    translateToNative(message_id);
+  }
+}

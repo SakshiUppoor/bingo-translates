@@ -1,109 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="../static/img/favicon.png" />
+    <!-- Home CSS -->
+    <link rel="stylesheet" href="static/css/home.css" />
+    <!-- Bootstrap CSS -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="../static/css/layout.css" />
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <title>Bingo</title>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <style>
+      .nav-blue:hover {
+        color: var(--blue) !important;
+      }
+
+      .nav-purple:hover {
+        color: var(--purple) !important;
+      }
+
+      .nav-teal:hover {
+        color: var(--teal) !important;
+      }
+
+      .nav-orange:hover {
+        color: var(--orange) !important;
+      }
+      .page-container {
+        margin-top: 60px;
+      }
+
+      .service-btn {
+        background: transparent;
+        outline: none;
+        border: 2px solid #888;
+        border-radius: 10px;
+        margin: 12px 0;
+        min-height: 150px;
+        width: 100%;
+        font-size: 30px;
+        color: #888;
+        font-weight: 600;
+        transition: all ease-in 0.1s;
+      }
+    </style>
   </head>
   <body>
-    <!-- <div class="hero">
-      <div class="info">
-        <div class="app-name">AppName <br /></div>
-        <div class="desc">
-          Language Translation features in Indian languages <br />
-        </div>
-      </div> -->
-
-    <div class="jumbotron">
-      <h1 class="display-4">Bingo!</h1>
-      <p class="lead">Learn new languages efficiently!</p>
-      <hr class="my-4" />
-      <p class="desc">
-        Get real-time translations of your voice as well as text in a
-        revolutionary way to communicate<br />
-        in your desired language.
-      </p>
-    </div>
-    <div class="box">
-      <div class="features">
-        <a class="style" href="translator.html"
-          ><div id="i1" class="panel">
-            <div class="icon">
-              <img src="../static/img/translate.png" />
-            </div>
-            <div class="info">
-              <h4>Translator</h4>
-              Translates from one language to other
-            </div>
-          </div></a
-        >
-        <a class="style" href="index11.html">
-          <div id="i2" class="panel">
-            <div class="icon">
-              <img src="../static/img/chat.png" />
-            </div>
-            <div class="info">
-              <h4>Chat</h4>
-              Join language specific chatrooms
-            </div>
+    <div class="page-container container">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolled">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="/">Bingo!</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="me-auto"></ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link nav-blue" href="translator.html">Translate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-purple" href="chat_join.html">Chat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-teal" href="learner.html">Practice</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-orange" href="test.html">Quiz</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li> -->
+            </ul>
+            <a href="#services">
+              <button
+                class="btn btn-outline-dark"
+                type="submit"
+                style="
+                  border: 2px solid;
+                  font-weight: 600;
+                  border-radius: 1.3em;
+                "
+              >
+                Get Started
+              </button>
+            </a>
           </div>
-        </a>
-        <a href="learner.html" class="style">
-          <div id="i4" class="panel">
-            <div class="icon">
-              <img src="../static/img/learn.png" />
-            </div>
-            <div class="info">
-              <h4>Learn</h4>
-              Learn & practice commonly used phrases!
-            </div>
-          </div></a
-        >
+        </div>
+      </nav>
+      <div class="row hero">
+        <div class="col-md-6 hero-outer-text-container">
+          <div class="container-xsm hero-inner-text-container">
+            <h1>Learn <br />New Languages with ease!</h1>
+            <p>
+              Visiting the temples in Kyoto, getting a new job or making a
+              personal connection-no matter why you want to learn, we have the
+              right tools for you.
+            </p>
+            <a href="#services">
+              <button
+                class="btn btn-primary"
+                type="submit"
+                style="
+                  border-radius: 1.3em;
+                  padding: 8px 23px;
+                  background: #495ce6;
+                "
+              >
+                Get Started
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="static/img/hero.png"
+            alt="People talking"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+      <div class="features-container">
+        <h1>Why Us?</h1>
+        <div class="row" style="justify-content: space-evenly">
+          <div class="feature col-md-3">
+            <img src="static/img/interact.png" alt="" style="width: 30%" />
+            <h3>Interactive Learning</h3>
+            <p>
+              Chat with people around the world with our real-time multilingual
+              chatrooms without worrying about language barriers!
+            </p>
+          </div>
 
-        <a href="test.html" class="style">
-          <div id="i5" class="panel">
-            <div class="icon">
-              <img src="../static/img/test.png" />
-            </div>
-            <div class="info">
-              <h4>Test</h4>
-              Show off your vocabulary skills!
-            </div>
-          </div></a
-        >
-        <div style="clear: both"></div>
+          <div class="feature col-md-3">
+            <img src="static/img/headphones.png" alt="" style="width: 30%" />
+            <h3>Engaging audio</h3>
+            <p>
+              Learn by listening. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Facere, optio! Lorem ipsum dolor, sit amet
+              consectetur adipisicing elit. Non doloribus quis magnam omnis
+              voluptatibus cumque iure cum, velit voluptas ipsam.
+            </p>
+          </div>
+
+          <div class="feature col-md-3">
+            <img src="static/img/practice.png" alt="" style="width: 30%" />
+            <h3>Practice</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Delectus, reiciendis placeat consectetur, aut dolorum quibusdam
+              praesentium sequi, ut eum accusantium itaque voluptatem
+              voluptatum.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="services" id="services">
+        <h1>What We Offer</h1>
+        <div class="row" style="justify-content: center">
+          <div class="col-md-5">
+            <a href="translator.html">
+              <button class="service-btn blue">
+                <div class="row">
+                  <div class="col-7 text-col">
+                    <div>Translate</div>
+                  </div>
+                  <div class="col-5">
+                    <span
+                      class="iconify"
+                      data-icon="heroicons-outline:translate"
+                      data-inline="false"
+                    >
+                    </span>
+                  </div>
+                </div>
+              </button>
+            </a>
+          </div>
+          <div class="col-md-5">
+            <a href="chat_join.html">
+              <button class="service-btn purple">
+                <div class="row">
+                  <div class="col-7 text-col">
+                    <div>Chat</div>
+                  </div>
+                  <div class="col-5">
+                    <span
+                      class="iconify"
+                      data-icon="cil:chat-bubble"
+                      data-inline="false"
+                    >
+                    </span>
+                  </div>
+                </div>
+              </button>
+            </a>
+          </div>
+          <div class="col-md-5">
+            <a href="learner.html">
+              <button class="service-btn teal">
+                <div class="row">
+                  <div class="col-7 text-col">
+                    <div>Learn Phrases</div>
+                  </div>
+                  <div class="col-5">
+                    <span
+                      class="iconify"
+                      data-icon="fluent:learning-app-20-regular"
+                      data-inline="false"
+                    ></span>
+                  </div>
+                </div>
+              </button>
+            </a>
+          </div>
+          <div class="col-md-5">
+            <a href="test.html">
+              <button class="service-btn orange">
+                <div class="row">
+                  <div class="col-7 text-col">
+                    <div>Quiz</div>
+                  </div>
+                  <div class="col-5">
+                    <span
+                      class="iconify"
+                      data-icon="fluent:quiz-new-24-regular"
+                      data-inline="false"
+                    ></span>
+                  </div>
+                </div>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="jumbo">
-      <h4>Word of the day!</h4>
-      <div style="text-align: center">
-        <h2>मानवता</h2>
-      </div>
-      the human race; human beings collectively.
-      <div class="eg">
-        "उसने मानवता के खिलाफ अपराधों और युद्ध के कानूनों या रीति-रिवाजों के
-        उल्लंघन का आरोप लगाया है।"
-      </div>
-    </div>
+
     <!-- Footer -->
     <footer class="bg page-footer font-small unique-color-dark">
-      <div style="background-color: #6351ce">
+      <div style="background-color: var(--purple)">
         <div class="container">
           <!-- Grid row-->
           <div class="row py-4 d-flex align-items-center">
@@ -111,31 +279,15 @@
             <div
               class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0"
             >
-              <h6 class="mb-0">Get connected with us on social networks!</h6>
+              <h6 class="mb-0">Contribute to this project on Github!</h6>
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
             <div class="col-md-6 col-lg-7 text-center text-md-right">
-              <!-- Facebook -->
-              <a class="fb-ic">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-              <!-- Twitter -->
-              <a class="tw-ic">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-              <!-- Google +-->
-              <a class="gplus-ic">
-                <ion-icon name="logo-googleplus"></ion-icon>
-              </a>
-              <!--Linkedin -->
-              <a class="li-ic">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-              <!--Instagram-->
-              <a class="ins-ic">
-                <ion-icon name="logo-instagram"></ion-icon>
+              <!-- Github -->
+              <a class="git-ic" style="font-size: 25px" href="https://github.com/SakshiUppoor/bingo-translates">
+                <ion-icon name="logo-github"></ion-icon>
               </a>
             </div>
             <!-- Grid column -->
@@ -151,14 +303,14 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <h6 class="text-uppercase font-weight-150">Company name</h6>
+            <h6 class="text-uppercase font-weight-150">Bits & Bots</h6>
             <hr
               class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
               style="width: 60px"
             />
             <p>
-              Here you can use rows and columns to organize your footer content.
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              This project was originally built at VCET&nbsp;'19 Hackathon. This
+              project is open source! Contributions are welcome!
             </p>
           </div>
           <!-- Grid column -->
@@ -175,7 +327,7 @@
               <a href="translator.html">Translation</a>
             </p>
             <p>
-              <a href="index11.html">Chat</a>
+              <a href="chat_join.html">Chat</a>
             </p>
             <p>
               <a href="learner.html">Learn</a>
@@ -187,41 +339,49 @@
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <div class="col-md-8 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase font-weight-150">About</h6>
+            <h6 class="text-uppercase font-weight-150">Contact Us</h6>
             <hr
               class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
               style="width: 60px"
             />
-            <p>
-              <a href="#!">About Us</a>
-            </p>
-            <p>
-              <a href="#!">Terms</a>
-            </p>
-            <p>
-              <a href="#!">Privacy</a>
-            </p>
-            <p>
-              <a href="#!">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
+            <div class="teammate">
+              <div class="profile">
+                <img
+                  src="https://avatars3.githubusercontent.com/u/52544343?s=400&u=69ebd877643b1e35cfe21ce033988dc19f8ea182&v=4"
+                  alt=""
+                />
+              </div>
+              <div class="name">
+                <a href="https://github.com/yash-chad"> Yash Chachad </a>
+              </div>
+            </div>
 
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase font-weight-150">Contact</h6>
-            <hr
-              class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-              style="width: 60px"
-            />
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+            <div class="teammate">
+              <div class="profile">
+                <img src="static/img/Siddhi.jpg" alt="" />
+              </div>
+              <div class="name">
+                <a href="https://github.com/SiddhiJhunjhunwala">
+                  Siddhi Jhunjhunwala
+                </a>
+              </div>
+            </div>
+
+            <div class="teammate">
+              <div class="profile">
+                <img
+                  src="https://avatars3.githubusercontent.com/u/46474346?s=460&u=d99535a9bd008a2089fbf0d8323750eaedadd131&v=4"
+                  alt=""
+                />
+              </div>
+              <div class="name">
+                <a href="https://github.com/SakshiUppoor"> Sakshi Uppoor </a>
+              </div>
+            </div>
           </div>
+
           <!-- Grid column -->
         </div>
         <!-- Grid row -->
@@ -230,11 +390,39 @@
 
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3">
-        © 2019 Copyright:
+        © 2021 Copyright:
         <a href="#"> Bingo.com</a>
       </div>
       <!-- Copyright -->
     </footer>
-    <!-- Footer -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
   </body>
+  <script>
+    // function goto(page) {
+    //   window.location.href = `${page}.html`;
+    // }
+    // $(function () {
+    //   $(document).scroll(function () {
+    //     var $nav = $("nav");
+    //     $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+    //   });
+    // });
+  </script>
 </html>

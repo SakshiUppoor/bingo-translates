@@ -1,3 +1,7 @@
+body {
+  background: #eee !important;
+}
+
 #navbarNavDropdown {
   position: fixed;
   right: 1em;
@@ -18,11 +22,12 @@ select {
   border: none;
   cursor: pointer;
   border-bottom: solid #000;
+  background: #fff;
 }
 
 .my-language {
   font-size: 1.3em;
-  margin: 1em 20em;
+  /* margin: 1em 20em; */
   display: inline-block;
 }
 
@@ -31,35 +36,43 @@ select {
 }
 
 .qset {
+  max-width: 775px;
   text-align: center;
-  margin: 0 5em;
+  margin: 0 auto;
   font-size: 2em;
+  background: #fff;
+  border-radius: 20px;
+  padding: 60px 80px;
 }
 
 .question {
-  background: rgb(255, 209, 129);
+  /* background: rgb(255, 209, 129);
   background: linear-gradient(
     111deg,
     rgb(235, 222, 48) 0%,
     rgb(251, 104, 6) 100%
-  );
-  margin: 1em 0;
-  padding: 1em 0;
+  ); */
+  margin: 0.5em 0 1em 0;
+  /* padding: 1em 0; */
   font-size: 1.25em;
-  color: white;
+  /* color: white; */
+  font-weight: 500;
 }
 
 .options {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0.6em;
+  grid-gap: 0.6em; */
+  justify-content: space-evenly;
+  margin: 10px 0 !important;
 }
 
 .options > div {
-  border: solid rgb(90, 104, 101);
+  border: 1px solid rgb(150, 150, 150);
   padding: 0.5em;
-  color: rgb(90, 104, 101);
+  color: rgb(150, 150, 150);
   cursor: pointer;
+  margin: 15px 0;
 }
 
 .question,
@@ -82,3 +95,62 @@ select {
 .btncontainer a:hover {
   text-decoration: none;
 }
+
+#myBar {
+  border-radius: 1em;
+  height: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+#score {
+  display: none;
+}
+
+#qno {
+  text-transform: uppercase;
+  color: #777;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.q-container {
+  /* min-height: 120px; */
+}
+
+
+.outer {
+  position: relative;
+}
+
+.outer .card {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  min-width: 50vw;
+}
+
+.card-content {
+  margin: 1em 8em;
+}
+
+@media (max-width: 768px) {
+  .question {
+    font-size: 0.8em;
+  }
+  .option {
+    font-size: 0.5em;
+  }
+  .qset {
+    margin: 0 20px;
+    padding: 20px;
+  }
+  .card-content {
+    margin: 0 4em;
+  }
+
+  .outer .card {
+    transform: translate(-50%, 25%);
+  }
+}
+

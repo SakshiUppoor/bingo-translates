@@ -3,6 +3,7 @@ const translatte = require("translatte");
 const router = express();
 const fs = require("fs");
 const e = require("express");
+const { createUUID } = require("../utils/uuid");
 
 router.get("/translated", (req, res) => {
   if (!req.query.inputstring) {
@@ -36,8 +37,8 @@ router.get("/getQuestions", (req, res) => {
       // {0 - English(en),1 - Hindi(hi), 2 - Marathi(mr),3- Gujrati(gu),4-Kannada(kn)
       // ,5-Malayalam(ml),6-German(de),7-Russian(ru),8-Spanish(es),9-Tamil(ta),10-Telugu(te)}
 
-      const words = require("./quizData.json");
-      const languageMap = require("./languages.json");
+      const words = require("../jsonData/quizData.json");
+      const languageMap = require("../jsonData/languages.json");
 
       const source = languageMap[req.query.source_lan];
       const response = languageMap[req.query.res_lan];
@@ -47,7 +48,9 @@ router.get("/getQuestions", (req, res) => {
       for (let i = 0; i < count; i++) {
         const current_word = words[source.code][i];
         const answer = words[response.code][i];
-        const question = `What is the ${response.lang} word for '${current_word}' ?`;
+        const question_id = createUUID();
+        console.log(question_id);
+        const question = `What is the ${response.lang} word for '${current_word}'?`;
         const options = [answer];
 
         while (options.length < 4) {
@@ -57,7 +60,7 @@ router.get("/getQuestions", (req, res) => {
         options.sort(function () {
           return Math.random() - 0.5;
         });
-        const obj = { question, answer, options };
+        const obj = { question_id, question, answer, options };
         result.push(obj);
       }
       return res.send(result);

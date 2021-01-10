@@ -54,42 +54,59 @@
         </div>
       </nav>
     </div>
-
-    <div class="title">Test Yourself</div>
-    <!--
-    <div class="control">
-      <div class="my-language">
-        I speak
-        <select id="my-lang">
-          <option value="en">English</option>
-        </select>
-        learning
-        <select id="my-lang">
-          <option value="en">हिंदी</option>
-        </select>
+    <div class="outer container">
+      <div class="card">
+        <div class="card-content">
+          <div class="title">Test Yourself</div>
+  
+          <div class="control">
+            <div class="my-language">
+              I speak
+              <select id="my-lang">
+                <option value="en">English</option>
+                <option value="de">German</option>
+                <option value="gu">Gujrati</option>
+                <option value="hi">Hindi</option>
+                <option value="kn">Kannada</option>
+                <option value="ml">Malayalam</option>
+                <option value="mr">Marathi</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+              </select>
+              learning
+              <select id="learning-lang">
+                <option value="hi">हिंदी</option>
+                <option value="en">English</option>
+                <option value="de">German</option>
+                <option value="gu">Gujrati</option>
+                <option value="kn">Kannada</option>
+                <option value="ml">Malayalam</option>
+                <option value="mr">Marathi</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+              </select>
+            </div>
+          </div>
+  
+          <br />
+          <div class="btncontainer">
+            <button class="btn btn-primary" onClick="startQuiz()">Start&nbsp;Quiz</button>
+          </div>
+        </div>
       </div>
-    </div>
-  -->
-    <div class="qset">
-      <div class="question">What's the English word for "तिमिर"?</div>
-      <div class="options">
-        <div id="A">Darkness</div>
-        <div id="B">Dimness</div>
-        <div id="C">Liberty</div>
-        <div id="D">Army</div>
-      </div>
-    </div>
-    <br />
-    <div class="btncontainer">
-      <button>
-        <a href="test2.html">Next</a>
-      </button>
     </div>
     <script>
-      A = document.getElementById("A");
-      console.log(A.innerHTML);
+      function startQuiz() {
+        src = document.getElementById("my-lang").value;
+        res = document.getElementById("learning-lang").value;
+        window.location.href = `/quiz.html?src=${src}&res=${res}`;
+      }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../static/js/test_page.js"></script>
+    <!-- <script src="../static/js/test_page.js"></script> -->
   </body>
 </html>
