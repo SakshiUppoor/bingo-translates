@@ -80,10 +80,6 @@ select {
   display: inline-block;
 }
 
-.control {
-  text-align: center;
-}
-
 .butt1 {
   background-color: #4caf50; /* Green */
   border: none;
@@ -93,4 +89,19 @@ select {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .panel {
+    font-weight: 500;
+    width: 80% !important;
+    font-size: 20px;
+  }
+
+  .translated {
+    font-size: 12px;
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+  }
 }

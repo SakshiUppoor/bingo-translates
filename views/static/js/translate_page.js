@@ -1,4 +1,3 @@
-
 var resDropDown = document.querySelector("#res_lan");
 var translateBtn = document.querySelector("#translate-btn");
 var speechBtn = document.querySelector("#speakme");
@@ -51,12 +50,14 @@ function download(text) {
 
   document.body.removeChild(element);
 }
-    
-    const btn11 = document.querySelector(".talk");
+
+const talk_btn = document.querySelector(".talk");
 
 //Voice Recognition event
-btn11.addEventListener("click", () => {
+talk_btn.addEventListener("click", () => {
   recognition.start();
+  inputdata.value = "Listening...";
+  speechBtn.disabled = true;
 });
 
 //Speak out event
@@ -72,14 +73,13 @@ function textToSpeech() {
 }
 
 function performTranslation(e) {
-  
   const source_lan = document.querySelector("#source_lan").value;
   const res_lan = document.querySelector("#res_lan").value;
   const inputdata = document.querySelector("#inputdata");
-  
+
   result.value = "Translating...";
   speechBtn.disabled = true;
-  
+
   e.preventDefault();
   translateme(inputdata.value.trim(), source_lan, res_lan);
 }
