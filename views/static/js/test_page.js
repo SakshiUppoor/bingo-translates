@@ -82,6 +82,7 @@ function showResult() {
 
 function move() {
   var elem = document.getElementById("myBar");   
+  var qno = document.getElementById("qno");   
   var width = 0;
   var id = setInterval(frame, 10);
   function frame() {
@@ -90,7 +91,7 @@ function move() {
     } else {
       width=(parseInt)((current-1)/questions.length*100); 
       elem.style.width = width + '%'; 
-      elem.innerHTML = `${current-1}/${questions.length}`;
+      qno.innerHTML = `Question ${current-1} / ${questions.length}`;
     }
   }
 }
