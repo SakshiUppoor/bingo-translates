@@ -89,16 +89,16 @@ button:disabled {
 
 /* Chat Page Layout */
 
-.chat {
+/* .chat {
   display: flex;
-}
+} */
 
 .chat__sidebar {
   /* height: calc(100vh - 58px); */
   height: 100vh;
   color: white;
   background: #333744;
-  width: 15%;
+  /* width: 15%; */
   overflow-y: scroll;
 }
 
@@ -193,4 +193,9 @@ button:disabled {
 
 .location__link {
   color: #6b47b8 !important;
+}
+@media screen and (max-width: 768px) {
+  .chat__sidebar {
+    height: 100%;
+  }
 }
