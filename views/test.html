@@ -54,45 +54,50 @@
         </div>
       </nav>
     </div>
-
-    <div class="title">Test Yourself</div>
-
-    <div class="control">
-      <div class="my-language">
-        I speak
-        <select id="my-lang">
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="gu">Gujrati</option>
-          <option value="hi">Hindi</option>
-          <option value="kn">Kannada</option>
-          <option value="ml">Malayalam</option>
-          <option value="mr">Marathi</option>
-          <option value="ru">Russian</option>
-          <option value="es">Spanish</option>
-          <option value="ta">Tamil</option>
-          <option value="te">Telugu</option>
-        </select>
-        learning
-        <select id="learning-lang">
-          <option value="hi">हिंदी</option>
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="gu">Gujrati</option>
-          <option value="kn">Kannada</option>
-          <option value="ml">Malayalam</option>
-          <option value="mr">Marathi</option>
-          <option value="ru">Russian</option>
-          <option value="es">Spanish</option>
-          <option value="ta">Tamil</option>
-          <option value="te">Telugu</option>
-        </select>
+    <div class="outer container">
+      <div class="card">
+        <div class="card-content">
+          <div class="title">Test Yourself</div>
+  
+          <div class="control">
+            <div class="my-language">
+              I speak
+              <select id="my-lang">
+                <option value="en">English</option>
+                <option value="de">German</option>
+                <option value="gu">Gujrati</option>
+                <option value="hi">Hindi</option>
+                <option value="kn">Kannada</option>
+                <option value="ml">Malayalam</option>
+                <option value="mr">Marathi</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+              </select>
+              learning
+              <select id="learning-lang">
+                <option value="hi">हिंदी</option>
+                <option value="en">English</option>
+                <option value="de">German</option>
+                <option value="gu">Gujrati</option>
+                <option value="kn">Kannada</option>
+                <option value="ml">Malayalam</option>
+                <option value="mr">Marathi</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+              </select>
+            </div>
+          </div>
+  
+          <br />
+          <div class="btncontainer">
+            <button class="btn btn-primary" onClick="startQuiz()">Start&nbsp;Quiz</button>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <br />
-    <div class="btncontainer">
-      <button onClick="startQuiz()">Start Quiz</button>
     </div>
     <script>
       function startQuiz() {

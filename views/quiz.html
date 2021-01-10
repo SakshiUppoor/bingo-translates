@@ -73,6 +73,7 @@
 
     <div class="qset">
       <div id="score"></div>
+      <div id="qno"></div>
       <div class="w3-light-grey">
         <div
           id="myBar"
@@ -80,13 +81,15 @@
           style="color: #fff; background-color: #4cb050"
         ></div>
       </div>
-      <div class="question" id="question">
+      <div class="q-container">
+        <div class="question" id="question">
+        </div>
       </div>
-      <div class="options">
-        <div class="options" onClick="checkAnswer(this)" id="A"></div>
-        <div class="options" onClick="checkAnswer(this)" id="B"></div>
-        <div class="options" onClick="checkAnswer(this)" id="C"></div>
-        <div class="options" onClick="checkAnswer(this)" id="D"></div>
+      <div class="options row">
+        <div class="option col-md-5" onClick="checkAnswer(this)" id="A"></div>
+        <div class="option col-md-5" onClick="checkAnswer(this)" id="B"></div>
+        <div class="option col-md-5" onClick="checkAnswer(this)" id="C"></div>
+        <div class="option col-md-5" onClick="checkAnswer(this)" id="D"></div>
       </div>
     </div>
     <br />
