@@ -56,20 +56,6 @@ socket.on("message", (response) => {
   autoscroll();
 });
 
-// socket.on("locationMessage", (message) => {
-//   console.log(message);
-//   const html = Mustache.render(locationTemplate, {
-//     username: message.username,
-//     text: message.text,
-//     createdAt: moment(message.createdAt).format("h:mm a"),
-//     message_id: message.message_id,
-//     photo: message.photo,
-//     color: message.color,
-//   });
-//   messages.insertAdjacentHTML("beforeend", html);
-//   autoscroll();
-// });
-
 socket.on("roomData", ({ room, users }) => {
   const html = Mustache.render(sidebarTemplate, {
     room,
