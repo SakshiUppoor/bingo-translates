@@ -83,11 +83,10 @@ messageForm.addEventListener("submit", (e) => {
 
   //const message=e.target.elements.message.value
   const message = document.querySelector("input").value;
-  // messageForm.value = translateme(message);
+  messageFormInput.value = "";
 
-  socket.emit("message", message, (error) => {
+  socket.emit("message", { message, room, res_language }, (error) => {
     messageFormButton.removeAttribute("disabled"); //Reactivate the button on sending
-    messageFormInput.value = "";
     messageFormInput.focus();
 
     if (error) {

@@ -5,6 +5,7 @@ const socketio = require("socket.io");
 const Filter = require("bad-words");
 const { generateMessage } = require("./utils/messages");
 const translateRoutes = require("./routes/translate");
+const translatte = require("translatte");
 const {
   addUser,
   removeUser,
@@ -56,10 +57,18 @@ io.on("connection", (socket) => {
     callback();
   });
 
-  socket.on("message", (message, callback) => {
+  socket.on("message", async ({ message, room, res_language }, callback) => {
     const user = getUser(socket.id);
-
     const filter = new Filter();
+
+    // Translating every message to the room_language (room) by default
+    await translatte(message, { from: res_language, to: room })
+      .then((translated_res) => {
+        message = translated_res.text;
+      })
+      .catch((err) => {
+        res.send(err);
+      });
 
     if (filter.isProfane(message)) {
       socket.emit(
