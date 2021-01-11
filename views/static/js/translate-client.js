@@ -36,13 +36,19 @@ recognition.onstart = () => {
   console.log("Voices activated!!");
 };
 
+// recognition.onsoundend = () => {
+//   console.log("Voice deactivated!")
+//   var inputArea = document.querySelector("#inputdata");
+//   inputArea.value = "";
+// };
+
 recognition.onresult = (event) => {
   console.log(event);
   const current = event.resultIndex;
 
   const transcript = event.results[current][0].transcript;
   inputdata.value = transcript;
-  translateme();
+  performTranslation(event);
 };
 
 const readOutLoud = (message, lang) => {
