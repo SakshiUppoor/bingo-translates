@@ -76,7 +76,6 @@ function performTranslation(e) {
   const source_lan = document.querySelector("#source_lan").value;
   const res_lan = document.querySelector("#res_lan").value;
   const inputdata = document.querySelector("#inputdata");
-
   result.value = "Translating...";
   speechBtn.disabled = true;
 
