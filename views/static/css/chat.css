@@ -1,3 +1,11 @@
+:root {
+  --pink: #ffa3b0;
+  --purple: #495ce6;
+  --blue: #4285f2;
+  --teal: #05bc9e;
+  --orange: #ff7004;
+}
+
 #button_trans {
   margin: 0 1em;
 }
