@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --pink: #ffa3b0;
+  --purple: #495ce6;
+  --blue: #4285f2;
+  --teal: #05bc9e;
+  --orange: #ff7004;
+}
+
+* {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+
 body {
   background: #eee !important;
 }

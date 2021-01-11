@@ -20,44 +20,80 @@
       crossorigin="anonymous"
     />
     <title>Learn</title>
+    <style>
+      .nav-blue:hover {
+        color: var(--blue) !important;
+      }
+
+      .nav-purple:hover {
+        color: var(--purple) !important;
+      }
+
+      .nav-teal:hover {
+        color: var(--teal) !important;
+      }
+
+      .nav-orange:hover {
+        color: var(--orange) !important;
+      }
+    </style>
   </head>
   <body data-title="my_learner_page">
     <div id="nav">
       <!--Navbar-->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Bingo!</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="translator.html">Translate </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#"
-                >Chat<span class="sr-only">(current)</span></a
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark scrolled">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="/">Bingo!</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="mr-auto"></ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link nav-blue" href="translator.html"
+                  >Translate</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-purple" href="chat_join.html">Chat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="learner.html">Practice</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-orange" href="test.html">Quiz</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="learner.html">Learn</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="test.html">Test</a>
-            </li>
-          </ul>
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li> -->
+            </ul>
+          </div>
         </div>
       </nav>
     </div>
@@ -100,10 +136,23 @@
       </div>
     </div>
 
-    <div class="words_container row" style="width: fit-content; 
-    text-align: center;
-    justify-content: space-evenly;"></div>
+    <div
+      class="words_container row"
+      style="
+        width: fit-content;
+        text-align: center;
+        justify-content: space-evenly;
+      "
+    ></div>
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
     <script src="./static/js/translate-client.js"></script>
     <script src="./static/js/data.js"></script>
     <script src="./static/js/learner_page.js"></script>
