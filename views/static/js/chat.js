@@ -39,8 +39,9 @@ const autoscroll = () => {
   messages.scrollTop = messages.scrollHeight;
 };
 
-socket.on("message", (message) => {
-  console.log(message);
+socket.on("message", (response) => {
+  console.log(response);
+  const { message, location } = response;
 
   const html = Mustache.render(messageTemplate, {
     username: message.username,
@@ -49,20 +50,7 @@ socket.on("message", (message) => {
     message_id: message.message_id,
     photo: message.photo,
     color: message.color,
-  });
-  messages.insertAdjacentHTML("beforeend", html);
-  autoscroll();
-});
-
-socket.on("locationMessage", (message) => {
-  console.log(message);
-  const html = Mustache.render(locationTemplate, {
-    username: message.username,
-    text: message.text,
-    createdAt: moment(message.createdAt).format("h:mm a"),
-    message_id: message.message_id,
-    photo: message.photo,
-    color: message.color,
+    location: location,
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
@@ -76,6 +64,21 @@ socket.on("roomData", ({ room, users }) => {
   document.querySelector("#sidebar").innerHTML = html;
 });
 
+// If locationSharing is on -> Then your location(city, country) will be visible besides every message
+let locationSharing = 0;
+locationbutton.addEventListener("click", () => {
+  console.log("clicked");
+  if (!navigator.geolocation) {
+    return alert("OOps! The current browser doesn't support this feature");
+  }
+
+  locationSharing = !locationSharing;
+  navigator.geolocation.getCurrentPosition((position) => {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+  });
+});
+
 messageForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -83,33 +86,28 @@ messageForm.addEventListener("submit", (e) => {
 
   //const message=e.target.elements.message.value
   const message = document.querySelector("input").value;
-  // messageForm.value = translateme(message);
+  messageFormInput.value = "";
 
-  socket.emit("message", message, (error) => {
-    messageFormButton.removeAttribute("disabled"); //Reactivate the button on sending
-    messageFormInput.value = "";
-    messageFormInput.focus();
+  socket.emit(
+    "message",
+    { message, room, res_language, locationSharing },
+    (error) => {
+      messageFormButton.removeAttribute("disabled"); //Reactivate the button on sending
+      messageFormInput.focus();
 
-    if (error) {
-      return console.log(error);
-    } else {
-      console.log("Message Delivered!");
+      if (error) {
+        return console.log(error);
+      } else {
+        console.log("Message Delivered!");
+      }
     }
-  });
+  );
 });
 
 const chatRoomName = languages[room] + " Chatroom";
 chatRoomTitle.innerHTML = chatRoomName;
 
-const translatebtn = document.querySelector("#button_trans");
-translatebtn.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  const message = document.querySelector("input").value;
-  const input = document.getElementById("input");
-  input.value = translateme(message, res_language, room);
-});
-
+// If this button is clicked (set) then the location of the user will also be shared with messages
 locationbutton.addEventListener("click", () => {
   locationbutton.setAttribute("disabled", "disabled");
 
@@ -119,7 +117,7 @@ locationbutton.addEventListener("click", () => {
 
   navigator.geolocation.getCurrentPosition((position) => {
     socket.emit(
-      "sendLocation",
+      "computeLocation",
       {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
