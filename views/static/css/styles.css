@@ -139,6 +139,13 @@ button:disabled {
   font-size: 14px;
 }
 
+.location_data {
+  text-transform: uppercase;
+  color: #888;
+  font-size: 10px;
+  margin-bottom: -8px;
+}
+
 .message a {
   color: #0070cc;
 }
