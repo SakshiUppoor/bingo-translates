@@ -67,6 +67,7 @@ socket.on("roomData", ({ room, users }) => {
 // If locationSharing is on -> Then your location(city, country) will be visible besides every message
 let locationSharing = 0;
 locationbutton.addEventListener("click", () => {
+  locationbutton.classList.toggle("bg");
   console.log("clicked");
   if (!navigator.geolocation) {
     return alert("OOps! The current browser doesn't support this feature");

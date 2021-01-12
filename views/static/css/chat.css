@@ -8,6 +8,7 @@
 
 body {
   width: 100vw;
+  overflow-x: hidden;
 }
 
 #button_trans {
@@ -60,10 +61,6 @@ summary {
   color: #fff;
 }
 
-#locationbutton {
-  margin: 0 1em;
-}
-
 .trans-button-container {
   margin-right: auto;
 }
@@ -78,4 +75,27 @@ summary {
   padding: 10px;
   font-size: 25px;
   font-weight: 500;
+}
+#locationbutton {
+  border-radius: 50%;
+  padding: 7px 12px;
+  margin: 0 0.5em 0 0.3em;
+  color: #7c5cbf;
+  border-color: grey;
+}
+
+#locationbutton:hover {
+  background-color: white;
+  border: 1px solid grey;
+  color: #7c5cbf;
+}
+
+.bg {
+  background-color: #7c5cbf;
+  color: white !important;
+}
+
+.bg:hover {
+  background-color: #7c5cbf !important;
+  color: white !important;
 }
