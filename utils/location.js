@@ -9,8 +9,9 @@ const fetchLocation = async (username, latitude, longitude) => {
     headers: { "api-key": "41exb1Iktl9OToEZBnJSjwsrQ4ZRjh7M" },
     responseType: "json",
   });
+  console.log(result.body);
   locations[username] = result.body.address;
-  // console.log("Location", locations);
+  console.log("Location", locations);
 };
 
 const getLocation = (username) => {
