@@ -43,14 +43,14 @@ io.on("connection", (socket) => {
         { id: "admin_id", username: "Bingo!", room: user.room },
         "Welcome"
       ),
-      location: "Headquarters",
+      location: "Bingo!",
     });
     socket.broadcast.to(user.room).emit("message", {
       message: generateMessage(
         { id: "admin_id", username: "Bingo!", room: user.room },
         `${username} has joined!`
       ),
-      location: "Headquarters",
+      location: "Bingo!",
     }); //Sends message to everyone except the user who has joined
 
     io.to(user.room).emit("roomData", {
@@ -73,7 +73,7 @@ io.on("connection", (socket) => {
             { id: "admin_id", username: "Bingo!", room: user.room },
             "Please maintain decent language!"
           ),
-          location: "Headquarters",
+          location: "Bingo!",
         });
         return callback(
           "PLease maintain your language.Profanity is prohibited!"

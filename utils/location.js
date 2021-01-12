@@ -21,26 +21,29 @@ const deleteLocation = async (user) => {
 };
 
 const getLocation = (user) => {
-  const locationObj = locations[user.room][user.username];
-  if (!locationObj) {
-    return "";
-  } else {
-    let locationString = "";
-    if (locationObj.city) {
-      locationString += locationObj.city + " ";
-    }
-    if (locationObj.region) {
-      locationString += locationObj.region + " ";
-    }
-    if (locationObj.state) {
-      locationString += locationObj.state + " ";
-    }
-    if (locationObj.country) {
-      locationString += locationObj.country + " ";
-    }
-    // console.log(locationString);
-    return locationString;
+  if (!locations[user.room] || !locations[user.room][user.username]) {
+    return "Unknown";
   }
+  const locationObj = locations[user.room][user.username];
+
+  let locationString = "";
+  if (locationObj.city) {
+    locationString += locationObj.city + " ";
+  }
+  if (locationObj.region) {
+    locationString += locationObj.region + " ";
+  }
+  if (locationObj.state) {
+    locationString += locationObj.state + " ";
+  }
+  if (locationObj.country) {
+    locationString += locationObj.country + " ";
+  }
+  // console.log(locationString);
+  if (locationString.trim() == "") {
+    locationString = "Unknown";
+  }
+  return locationString;
 };
 
 module.exports = { fetchLocation, getLocation, deleteLocation };
