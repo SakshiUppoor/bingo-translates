@@ -11,8 +11,79 @@
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+        <style>
+        .nav-blue:hover {
+            color: var(--blue) !important;
+        }
+
+        .nav-purple:hover {
+            color: var(--purple) !important;
+        }
+
+        .nav-teal:hover {
+            color: var(--teal) !important;
+        }
+
+        .nav-orange:hover {
+            color: var(--orange) !important;
+        }
+        </style>
     </head>
     <body>
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark scrolled">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="/">Bingo!</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="mr-auto"></ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link nav-blue" href="translator.html">Translate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="chat_join.html">Chat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-teal" href="learner.html">Practice</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-orange" href="test.html">Quiz</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
         <div class="centered-form">
             <div class="centered-form__box">
                 <h1>Join</h1>
@@ -57,5 +128,15 @@
                 </form>
             </div>
         </div>
+        
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
     </body>
 </html>

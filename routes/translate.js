@@ -1,8 +1,6 @@
 const express = require("express");
 const translatte = require("translatte");
 const router = express();
-const fs = require("fs");
-const e = require("express");
 const { createUUID } = require("../utils/uuid");
 
 router.get("/translated", (req, res) => {
