@@ -3,7 +3,7 @@ const express = require("express");
 const http = require("http");
 const socketio = require("socket.io");
 const Filter = require("bad-words");
-const { generateMessage } = require("./utils/messages");
+const { generateMessage, deleteAvatar } = require("./utils/messages");
 const {
   fetchLocation,
   getLocation,
@@ -17,7 +17,6 @@ const {
   getUser,
   getUsersInRoom,
 } = require("./utils/users");
-const { use } = require("./routes/translate");
 
 const app = express();
 const server = http.createServer(app);
@@ -112,9 +111,9 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     const user = removeUser(socket.id);
-    deleteLocation(user);
-
     if (user) {
+      deleteLocation(user);
+      deleteAvatar(user);
       io.to(user.room).emit(
         "message",
         generateMessage(

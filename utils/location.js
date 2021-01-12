@@ -17,7 +17,7 @@ const fetchLocation = async (user, latitude, longitude) => {
 };
 
 const deleteLocation = async (user) => {
-  delete locations[user.room][user.username];
+  if (locations[user.room]) delete locations[user.room][user.username];
 };
 
 const getLocation = (user) => {

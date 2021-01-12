@@ -33,6 +33,7 @@ const generateMessage = (user, text) => {
       nextAvatarColor[user.room] = 1;
     }
   }
+
   return {
     message_id: createUUID(),
     username: user.username,
@@ -43,6 +44,12 @@ const generateMessage = (user, text) => {
   };
 };
 
+const deleteAvatar = (user) => {
+  if (avatar[user.room]) delete avatar[user.room][user.username];
+  if (color[user.room]) delete color[user.room][user.username];
+};
+
 module.exports = {
   generateMessage,
+  deleteAvatar,
 };
