@@ -4,7 +4,11 @@ const http = require("http");
 const socketio = require("socket.io");
 const Filter = require("bad-words");
 const { generateMessage } = require("./utils/messages");
-const { fetchLocation, getLocation } = require("./utils/location");
+const {
+  fetchLocation,
+  getLocation,
+  deleteLocation,
+} = require("./utils/location");
 const translateRoutes = require("./routes/translate");
 const translatte = require("translatte");
 const {
@@ -13,6 +17,7 @@ const {
   getUser,
   getUsersInRoom,
 } = require("./utils/users");
+const { use } = require("./routes/translate");
 
 const app = express();
 const server = http.createServer(app);
@@ -87,7 +92,7 @@ io.on("connection", (socket) => {
       // Computing the user's location if allowed
       let locationString = "Unknown";
       if (locationSharing) {
-        locationString = getLocation(user.username);
+        locationString = getLocation(user);
       }
 
       io.to(user.room).emit("message", {
@@ -101,12 +106,13 @@ io.on("connection", (socket) => {
   // This computes and stores the location of the user in a hashmap
   socket.on("computeLocation", async (position, callback) => {
     const user = getUser(socket.id);
-    fetchLocation(user.username, position.latitude, position.longitude);
+    fetchLocation(user, position.latitude, position.longitude);
     callback();
   });
 
   socket.on("disconnect", () => {
     const user = removeUser(socket.id);
+    deleteLocation(user);
 
     if (user) {
       io.to(user.room).emit(

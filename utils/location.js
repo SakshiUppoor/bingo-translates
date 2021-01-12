@@ -2,37 +2,45 @@ const got = require("got");
 
 let locations = {};
 
-const fetchLocation = async (username, latitude, longitude) => {
+const fetchLocation = async (user, latitude, longitude) => {
   const url = ` https://api.codezap.io/v1/reverse?lat=${latitude}&lng=${longitude}&language=en`;
 
   const result = await got.get(url, {
     headers: { "api-key": "41exb1Iktl9OToEZBnJSjwsrQ4ZRjh7M" },
     responseType: "json",
   });
-  locations[username] = result.body.address;
-  // console.log("Location", locations);
+
+  if (!locations[user.room]) {
+    locations[user.room] = [];
+  }
+  locations[user.room][user.username] = result.body.address;
 };
 
-const getLocation = (username) => {
-  if (!locations[username]) {
+const deleteLocation = async (user) => {
+  delete locations[user.room][user.username];
+};
+
+const getLocation = (user) => {
+  const locationObj = locations[user.room][user.username];
+  if (!locationObj) {
     return "";
   } else {
     let locationString = "";
-    if (locations[username].city) {
-      locationString += locations[username].city + " ";
+    if (locationObj.city) {
+      locationString += locationObj.city + " ";
     }
-    if (locations[username].region) {
-      locationString += locations[username].region + " ";
+    if (locationObj.region) {
+      locationString += locationObj.region + " ";
     }
-    if (locations[username].state) {
-      locationString += locations[username].state + " ";
+    if (locationObj.state) {
+      locationString += locationObj.state + " ";
     }
-    if (locations[username].country) {
-      locationString += locations[username].country + " ";
+    if (locationObj.country) {
+      locationString += locationObj.country + " ";
     }
     // console.log(locationString);
     return locationString;
   }
 };
 
-module.exports = { fetchLocation, getLocation };
+module.exports = { fetchLocation, getLocation, deleteLocation };
