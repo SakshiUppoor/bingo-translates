@@ -116,6 +116,7 @@ button:disabled {
   flex-grow: 1;
   padding: 24px 24px 0 24px;
   overflow-y: scroll;
+  margin-bottom: 21vh;
 }
 
 /* Message Styles */
@@ -149,6 +150,9 @@ button:disabled {
   flex-shrink: 0;
   margin-top: 16px;
   padding: 24px;
+  position: fixed;
+  bottom: 0;
+  width: inherit;
 }
 
 .compose form {
@@ -197,5 +201,8 @@ button:disabled {
 @media screen and (max-width: 768px) {
   .chat__sidebar {
     height: 100%;
+  }
+  .chat__messages {
+    margin-bottom: 35vh;
   }
 }
