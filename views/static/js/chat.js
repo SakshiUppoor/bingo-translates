@@ -44,7 +44,7 @@ const autoscroll = () => {
 };
 
 socket.on("message", (response) => {
-  console.log(response);
+  // console.log(response);
   const { message, location } = response;
 
   const html = Mustache.render(messageTemplate, {
@@ -72,7 +72,7 @@ socket.on("roomData", ({ room, users }) => {
 let locationSharing = 0;
 locationbutton.addEventListener("click", () => {
   locationbutton.classList.toggle("bg");
-  console.log("clicked");
+  // console.log("clicked");
   if (!navigator.geolocation) {
     return alert("OOps! The current browser doesn't support this feature");
   }
@@ -101,9 +101,9 @@ messageForm.addEventListener("submit", (e) => {
       messageFormInput.focus();
 
       if (error) {
-        return console.log(error);
+        // return console.log(error);
       } else {
-        console.log("Message Delivered!");
+        // console.log("Message Delivered!");
       }
     }
   );
@@ -128,7 +128,7 @@ locationbutton.addEventListener("click", () => {
         longitude: position.coords.longitude,
       },
       () => {
-        console.log("Location Shared!");
+        // console.log("Location Shared!");
         locationbutton.removeAttribute("disabled");
       }
     );

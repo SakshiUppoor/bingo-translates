@@ -7,7 +7,7 @@ const translateme = (datainp, source_lan, res_lan) => {
     `${window.location.origin}/translated?source_lan=${source_lan}&res_lan=${res_lan}&inputstring=${datainp}`
   ).then((res) => {
     res.json().then((data) => {
-      console.log(data);
+      // console.log(data);
 
       if ($("body").data("title") === "my_translate_page") {
         result.value = "Loading....";
@@ -33,7 +33,7 @@ const SpeechRecognition =
 const recognition = new SpeechRecognition();
 
 recognition.onstart = () => {
-  console.log("Voices activated!!");
+  // console.log("Voices activated!!");
 };
 
 // recognition.onsoundend = () => {
@@ -43,7 +43,7 @@ recognition.onstart = () => {
 // };
 
 recognition.onresult = (event) => {
-  console.log(event);
+  // console.log(event);
   const current = event.resultIndex;
 
   const transcript = event.results[current][0].transcript;
@@ -57,7 +57,7 @@ const readOutLoud = (message, lang) => {
     lang = "hi";
   }
   const speech = new SpeechSynthesisUtterance();
-  console.log(speech);
+  // console.log(speech);
 
   speech.text = message;
   speech.voulme = 1;

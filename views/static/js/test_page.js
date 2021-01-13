@@ -25,10 +25,12 @@ fetch(url)
     questions = res;
     updateQuiz();
   })
-  .catch((error) => console.log(error));
+  .catch((error) => 
+  // console.log(error)
+  );
 
 function hello() {
-  console.log(questions);
+  // console.log(questions);
 }
 
 function updateQuiz() {
@@ -52,7 +54,7 @@ function checkAnswer(e) {
   if (e.innerHTML == currentAnswer) {
     score += 10;
   } else {
-    console.log("Try again.");
+    // console.log("Try again.");
   }
   updateQuiz();
 }

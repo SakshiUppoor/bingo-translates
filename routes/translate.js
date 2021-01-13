@@ -47,7 +47,7 @@ router.get("/getQuestions", (req, res) => {
         const current_word = words[source.code][i];
         const answer = words[response.code][i];
         const question_id = createUUID();
-        console.log(question_id);
+        // console.log(question_id);
         const question = `What is the ${response.lang} word for '${current_word}'?`;
         const options = [answer];
 
@@ -71,7 +71,7 @@ router.get("/getQuestions", (req, res) => {
 // This route is slow, so please have some patience, Thanks!
 router.get("/generateQuiz/:source_lan/:res_lan", async (req, res) => {
   try {
-    console.log(req.params);
+    // console.log(req.params);
     const source_lan = req.params.source_lan;
     const res_lan = req.params.res_lan;
     const words = [
@@ -88,7 +88,7 @@ router.get("/generateQuiz/:source_lan/:res_lan", async (req, res) => {
     await words.forEach(async (word, idx) => {
       await translatte(word, { from: source_lan, to: res_lan })
         .then(async (translated_res) => {
-          console.log(translated_res);
+          // console.log(translated_res);
           result.push({ text: translated_res.text, idx });
           if (result.length == words.length) {
             // We had to sort this as the received response was in random order
@@ -106,7 +106,7 @@ router.get("/generateQuiz/:source_lan/:res_lan", async (req, res) => {
           }
         })
         .catch((e) => {
-          console.log(e);
+          // console.log(e);
           throw e;
         });
     });

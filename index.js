@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "./views")));
 const io = socketio(server);
 
 io.on("connection", (socket) => {
-  console.log("New user connected!");
+  // console.log("New user connected!");
 
   socket.on("join", ({ username, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, username, room });
@@ -130,12 +130,12 @@ io.on("connection", (socket) => {
 });
 
 io.on("translate", (socket) => {
-  console.log("connect");
+  // console.log("connect");
 });
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
-  console.log("server is up on port " + PORT);
+  // console.log("server is up on port " + PORT);
 });
 
 //socket.emit() --Emits it to the particular user

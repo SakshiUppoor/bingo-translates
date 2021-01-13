@@ -6,7 +6,7 @@ const getTranslated = ({ message, res_language, room }) => {
     to: room,
   })
     .then((translated_res) => {
-      console.log(translated_res);
+      // console.log(translated_res);
       return translated_res.text;
     })
     .catch((err) => {
