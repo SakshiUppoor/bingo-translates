@@ -118,9 +118,29 @@ button#back {
   background: #2c2f3a;
   color: #fff;
 }
+
+.user-toggler {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.user-toggler:hover {
+  background-color: #fff;
+}
+
+.user-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  font-size: 13px;
+}
+
 #sidebar {
   display: none;
 }
+
 /* Desktop Only */
 @media (min-width: 768px) {
   #sidebar {
@@ -133,5 +153,13 @@ button#back {
   }
   .user-toggler {
     display: none;
+  }
+}
+
+/* Mobile Only */
+@media (max-width: 768px) {
+  #chatroom__title {
+    width: fit-content;
+    display: inline-block;
   }
 }
