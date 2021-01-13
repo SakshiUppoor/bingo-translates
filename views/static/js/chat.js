@@ -35,6 +35,10 @@ const { username, room, res_language } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 
+if (!username || !room || !res_language) {
+  window.location.href = "http://localhost:3000/";
+}
+
 const autoscroll = () => {
   messages.scrollTop = messages.scrollHeight;
 };
