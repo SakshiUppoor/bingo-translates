@@ -52,7 +52,6 @@ recognition.onresult = (event) => {
 };
 
 const readOutLoud = (message, lang) => {
-  
   languages_list = ["mr", "kn", "gu", "ml", "ta", "ur", "ta", "te", "sd"];
   if (languages_list.includes(lang)) {
     lang = "hi";

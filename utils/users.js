@@ -1,76 +1,69 @@
-const users =[]
+const users = [];
 
-const addUser = ({id , username , room})=>{
-    
-    if(username && room) {
+const addUser = ({ id, username, room }) => {
+  if (!id || !username || !room) return;
 
-        //Clean the data
-        username = username.trim().toLowerCase()
-        room = room.trim().toLowerCase()
+  //Clean the data
+  username = username.trim().toLowerCase();
+  room = room.trim().toLowerCase();
 
-        //Validate the data
-        if(!username || !room){
-            return {
-                error : "Username and room are required !"
-            }
-        }
+  //Validate the data
+  if (!username || !room) {
+    return {
+      error: "Username and room are required !",
+    };
+  }
 
-        //Check for existing users
-        const existingUser = users.find((user)=>{
-            return user.room === room && user.username === username
-        })
+  //Check for existing users
+  const existingUser = users.find((user) => {
+    return user.room === room && user.username === username;
+  });
 
-        if(existingUser){
-            return {
-                error : "Username is aldready in use !"
-            }
-        }
+  if (existingUser) {
+    return {
+      error: "Username is aldready in use !",
+    };
+  }
 
-        //Storing valid users
-        const user = {id , username , room }
-        users.push(user)
-        return { user }
-    } else{
-        return {
-                error : "Username and room name are required!"
-            }
+  //Storing valid users
+  const user = { id, username, room };
+  users.push(user);
+  return { user };
+};
+
+const removeUser = (id) => {
+  const index = users.findIndex((user) => {
+    return user.id === id;
+  });
+
+  if (index !== -1) {
+    return users.splice(index, 1)[0]; //splice returns an array
+  }
+};
+
+const getUser = (id) => {
+  const user = users.find((user) => {
+    return user.id === id;
+  });
+
+  return user;
+};
+
+const getUsersInRoom = (room) => {
+  const roomUsers = [];
+
+  users.find((user) => {
+    if (user.room == room) {
+      roomUsers.push(user);
     }
-}
+  });
 
-
-const removeUser = (id)=>{
-    const index = users.findIndex((user)=>{
-        return user.id === id
-    })
-
-    if(index !== -1){
-        return users.splice(index , 1)[0]   //splice returns an array 
-    } 
-}
-
-const getUser = (id)=>{
-    const user= users.find((user)=>{
-        return user.id === id
-    })
-    
-    return user
-}
-
-const getUsersInRoom = (room)=>{
-    const roomUsers=[]
-
-    users.find((user)=>{
-        if(user.room == room){
-            roomUsers.push(user)
-        }
-    })
-
-    return roomUsers
-}
+  return roomUsers;
+};
 
 module.exports = {
-    addUser,
-    removeUser,
-    getUser,
-    getUsersInRoom
-}
+  addUser,
+  removeUser,
+  getUser,
+  getUsersInRoom,
+};
