@@ -1,3 +1,4 @@
 node_modules
 config.js
 /OCR/node_modules
+.env

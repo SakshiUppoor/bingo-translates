@@ -143,7 +143,7 @@ function translateToNative(message_id) {
   translation = document.getElementById(`translation_${message_id}`);
   message = chatMessage.innerHTML;
   fetch(
-    `http://localhost:3000/translated?source_lan=${room}&res_lan=${res_language}&inputstring=${message}`
+    `${process.env.HOST}/translated?source_lan=${room}&res_lan=${res_language}&inputstring=${message}`
   ).then((res) => {
     res.json().then((data) => {
       translation.innerHTML = data.translatedText;

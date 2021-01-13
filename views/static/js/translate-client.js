@@ -4,7 +4,7 @@ const result = document.querySelector("#result");
 //Translate the data
 const translateme = (datainp, source_lan, res_lan) => {
   fetch(
-    `http://localhost:3000/translated?source_lan=${source_lan}&res_lan=${res_lan}&inputstring=${datainp}`
+    `${process.env.HOST}/translated?source_lan=${source_lan}&res_lan=${res_lan}&inputstring=${datainp}`
   ).then((res) => {
     res.json().then((data) => {
       console.log(data);
@@ -52,7 +52,6 @@ recognition.onresult = (event) => {
 };
 
 const readOutLoud = (message, lang) => {
-  
   languages_list = ["mr", "kn", "gu", "ml", "ta", "ur", "ta", "te", "sd"];
   if (languages_list.includes(lang)) {
     lang = "hi";
