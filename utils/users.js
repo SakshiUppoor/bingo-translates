@@ -1,8 +1,6 @@
 const users = [];
 
 const addUser = ({ id, username, room }) => {
-  if (!id || !username || !room) return;
-
   //Clean the data
   username = username.trim().toLowerCase();
   room = room.trim().toLowerCase();
