@@ -32,7 +32,11 @@
                 <div class="compose">
                     <form id="message_form">
                         <input placeholder="Enter your message here" id="input" name="message" required autocomplete="off">
-                        <button type="button" id="locationbutton" class="ml-auto secondary"><i class="fas fa-map-marker-alt"></i></button>
+                        
+                        <span class="my-tooltip">                      
+                            <button type="button" id="locationbutton" class="ml-auto secondary"><i class="fas fa-map-marker-alt"></i></button>
+                            <span class="my-tooltiptext">This will share your location with the messages you send</span>
+                        </span>
 
                         <button id="button" type="submit" class="primary">Send</button>
                     </form>
