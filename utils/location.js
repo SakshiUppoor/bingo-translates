@@ -13,7 +13,7 @@ const fetchLocation = async (user, latitude, longitude) => {
   if (!locations[user.room]) {
     locations[user.room] = [];
   }
-  locations[user.room][user.username] = result.body.address;
+  locations[user.room][user.username] = JSON.parse(result.body).address;
 };
 
 const deleteLocation = async (user) => {
