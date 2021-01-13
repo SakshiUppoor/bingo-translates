@@ -36,7 +36,7 @@ const { username, room, res_language } = Qs.parse(location.search, {
 });
 
 if (!username || !room || !res_language) {
-  window.location.href = "http://localhost:3000/";
+  window.location.href = process.env.HOST;
 }
 
 const autoscroll = () => {

@@ -4,7 +4,7 @@ const result = document.querySelector("#result");
 //Translate the data
 const translateme = (datainp, source_lan, res_lan) => {
   fetch(
-    `${process.env.HOST}/translated?source_lan=${source_lan}&res_lan=${res_lan}&inputstring=${datainp}`
+    `${window.location.origin}/translated?source_lan=${source_lan}&res_lan=${res_lan}&inputstring=${datainp}`
   ).then((res) => {
     res.json().then((data) => {
       console.log(data);
