@@ -56,6 +56,13 @@ summary {
   text-transform: capitalize;
 }
 
+button#back {
+    border-radius: 2em;
+    padding: 0.5em 1em;
+    background: #5f636f;
+    font-size: 14px;
+}
+
 .secondary:hover {
   border: #6b47b8;
   color: #fff;
@@ -98,4 +105,14 @@ summary {
 .bg:hover {
   background-color: #7c5cbf !important;
   color: white !important;
+}
+
+
+/* Desktop Only */
+@media (min-width: 768px) {
+  #back {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
 }
