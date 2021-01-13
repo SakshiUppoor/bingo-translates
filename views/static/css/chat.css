@@ -57,10 +57,10 @@ summary {
 }
 
 button#back {
-    border-radius: 2em;
-    padding: 0.5em 1em;
-    background: #5f636f;
-    font-size: 14px;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  background: #5f636f;
+  font-size: 14px;
 }
 
 .secondary:hover {
@@ -76,13 +76,17 @@ button#back {
   margin-left: 0 !important;
 }
 
-#chatroom__title {
+#chatroom__title__container {
   text-align: center;
   border-bottom: 1px solid #eeeeee;
+}
+
+#chatroom__title {
   padding: 10px;
   font-size: 25px;
   font-weight: 500;
 }
+
 #locationbutton {
   border-radius: 50%;
   padding: 7px 12px;
@@ -107,12 +111,27 @@ button#back {
   color: white !important;
 }
 
-
+#usersContent {
+  text-align: initial;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  background: #2c2f3a;
+  color: #fff;
+}
+#sidebar {
+  display: none;
+}
 /* Desktop Only */
 @media (min-width: 768px) {
+  #sidebar {
+    display: initial;
+  }
   #back {
     position: absolute;
     bottom: 20px;
     left: 20px;
+  }
+  .user-toggler {
+    display: none;
   }
 }

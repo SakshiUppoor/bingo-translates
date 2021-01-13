@@ -17,7 +17,14 @@
       
             <div class="col-12 col-md-10 chat__main">
                 
-                    <div id="chatroom__title"></div>
+                <div id="chatroom__title__container">
+                    <span id="chatroom__title"></span>
+                    <button class="user-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#usersContent" aria-controls="usersContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="usersContent">
+                    </div>
+                </div>
                 <div id="messages" class="chat__messages"></div>
             
                
@@ -40,16 +47,22 @@
       
         <script id="message-template" type="text/html">
             <div class="message-container row">
-                <div class="profile-pic-container col-2 col-md-1">
+                <div class="profile-pic-container col-3 col-md-1">
                     <div style="background-color:{{color}};    width: 50px;" class="profile-pic">
                         <img  src={{photo}} width="100%"></div>
                     </div>
-                <div class="message col-10 col-md-11" id="{{message_id}}">
-                    <p style="margin-bottom: 0;">
-                        <span class="message__name">{{username}}</span>
-                        <span class="message__meta">{{createdAt}}</span>
-                        <div class="location_data">( Sent from {{location}} )</div>
-                    </p>
+                <div class="message col-9 col-md-11" id="{{message_id}}">
+                    <div style="margin-bottom: 0;">
+                        <div class="message__details">
+                            <span class="message__name">{{username}}</span>
+                            <span class="message__meta">{{createdAt}}</span>
+                        </div>
+                        {{#locationOn}}
+                        <div class="location">
+                            <span class="location_data">Sent from {{location}}</span>
+                        </div>
+                        {{/locationOn}}
+                    </div>
                     <p id="text_{{message_id}}" class="chat_message" >{{message}}</p>
                     <details onClick="hello(this, '{{message_id}}')">
                         <summary id="view_{{message_id}}">View translation</summary>
@@ -94,6 +107,13 @@
         </script>
         <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"
+        ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>

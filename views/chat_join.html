@@ -6,7 +6,7 @@
        <link rel="stylesheet" href="./static/css/styles.css">
        <link rel="stylesheet" href="./static/css/join_page.css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -88,9 +88,15 @@
             <div class="centered-form__box">
                 <h1>Join</h1>
                 <form action="chat.html">
-                    <label>Display name</label>
-                    <input autocomplete="off" type="text" name="username" placeholder="Display name" required>
-                    <label>Room </label><br/>
+                    <label>Nickname</label>
+                    <div class="my-tooltip">                      
+                      <ion-icon name="information-circle"></ion-icon>
+                      <span class="my-tooltiptext">This name will be visible to everyone in the room</span>
+                    </div>
+                    <!-- <button type="button" class="info" data-toggle="tooltip" data-placement="bottom" title="(This name will be visible to everyone in the room)">
+                    </button> -->
+                    <input autocomplete="off" type="text" name="username" placeholder="Nickname" required>
+                    <label>Language you're learning</label><br/>
                 
                     <select name="room" class="dropdown custom_select">
                         <option value="en">English</option>
@@ -124,13 +130,15 @@
                         <option value="te">Telugu</option>
                       </select>
                       <br/><br/>
-                    <button>Join</button>
+                    <button id="join">Join</button>
                 </form>
             </div>
         </div>
         
+    <!-- Ion Icons CDN -->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
@@ -138,5 +146,10 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // $(function () {
+      //   $('[data-toggle="tooltip"]').tooltip()
+      // })
+    </script>
     </body>
 </html>

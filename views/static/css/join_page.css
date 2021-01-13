@@ -1,13 +1,66 @@
 .custom_select {
-  margin: 5px;
-  width: 95%;
-  padding: 5px 35px 5px 5px;
+  width: 100%;
   font-size: 16px;
-  border: 1px solid #ccc;
-  height: 34px;
-  -webkit-appearance: none;
+  height: 50px;
+  border: 1px solid #eeeeee;
+  padding: 12px;
+  outline: none;
+  /* -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  background: url(https://raw.githubusercontent.com/arvinpoddar/react-animals/master/src/animals/alligator.png)
-    96% / 15% no-repeat #a893d6;
+  appearance: none; */
+  /* background: url(https://raw.githubusercontent.com/arvinpoddar/react-animals/master/src/animals/alligator.png)
+    96% / 15% no-repeat #a893d6; */
+}
+
+#join {
+  border-radius: 0.7em;
+}
+
+.info {
+  width: auto !important;
+  background: none;
+  color: #777777;
+  font-size: 20px;
+  padding: 0;
+}
+
+.info:hover {
+  background: none;
+}
+
+/* my-tooltip container */
+.my-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #333744; /* If you want dots under the hoverable text */
+}
+
+/* my-tooltip text */
+.my-tooltip .my-tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+
+  /* Position the my-tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the my-tooltip text when you mouse over the my-tooltip container */
+.my-tooltip:hover .my-tooltiptext {
+  visibility: visible;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .my-tooltip .my-tooltiptext {
+    width: 200px;
+    top: 100% !important;
+    left: 50% !important;
+    margin-left: -60px !important; /* Use half of the width (120/2 = 60), to center the tooltip */
+  }
 }

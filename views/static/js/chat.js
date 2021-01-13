@@ -55,6 +55,7 @@ socket.on("message", (response) => {
     photo: message.photo,
     color: message.color,
     location: location,
+    locationOn: location!="Unknown"
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
@@ -66,6 +67,7 @@ socket.on("roomData", ({ room, users }) => {
     users,
   });
   document.querySelector("#sidebar").innerHTML = html;
+  document.querySelector("#usersContent").innerHTML = html;
 });
 
 // If locationSharing is on -> Then your location(city, country) will be visible besides every message
