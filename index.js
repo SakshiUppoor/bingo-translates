@@ -76,7 +76,7 @@ io.on("connection", (socket) => {
           location: "Bingo!",
         });
         return callback(
-          "PLease maintain your language. Profanity is prohibited!"
+          "Please maintain your language. Profanity is prohibited!"
         );
       }
       // Translating every message to the room_language (room) by default
