@@ -36,7 +36,7 @@ const { username, room, res_language } = Qs.parse(location.search, {
 });
 
 if (!username || !room || !res_language) {
-  window.location.href = process.env.HOST;
+  window.location.href = window.location.origin;
 }
 
 const autoscroll = () => {
@@ -55,7 +55,7 @@ socket.on("message", (response) => {
     photo: message.photo,
     color: message.color,
     location: location,
-    locationOn: location!="Unknown"
+    locationOn: location != "Unknown",
   });
   messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
