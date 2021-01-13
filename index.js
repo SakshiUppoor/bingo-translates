@@ -3,8 +3,12 @@ const express = require("express");
 const http = require("http");
 const socketio = require("socket.io");
 const Filter = require("bad-words");
-const { generateMessage } = require("./utils/messages");
-const { fetchLocation, getLocation } = require("./utils/location");
+const { generateMessage, deleteAvatar } = require("./utils/messages");
+const {
+  fetchLocation,
+  getLocation,
+  deleteLocation,
+} = require("./utils/location");
 const translateRoutes = require("./routes/translate");
 const translatte = require("translatte");
 const {
@@ -39,14 +43,14 @@ io.on("connection", (socket) => {
         { id: "admin_id", username: "Bingo!", room: user.room },
         "Welcome"
       ),
-      location: "Headquarters",
+      location: "Bingo!",
     });
     socket.broadcast.to(user.room).emit("message", {
       message: generateMessage(
         { id: "admin_id", username: "Bingo!", room: user.room },
         `${username} has joined!`
       ),
-      location: "Headquarters",
+      location: "Bingo!",
     }); //Sends message to everyone except the user who has joined
 
     io.to(user.room).emit("roomData", {
@@ -69,7 +73,7 @@ io.on("connection", (socket) => {
             { id: "admin_id", username: "Bingo!", room: user.room },
             "Please maintain decent language!"
           ),
-          location: "Headquarters",
+          location: "Bingo!",
         });
         return callback(
           "PLease maintain your language.Profanity is prohibited!"
@@ -87,7 +91,7 @@ io.on("connection", (socket) => {
       // Computing the user's location if allowed
       let locationString = "Unknown";
       if (locationSharing) {
-        locationString = getLocation(user.username);
+        locationString = getLocation(user);
       }
 
       io.to(user.room).emit("message", {
@@ -101,14 +105,15 @@ io.on("connection", (socket) => {
   // This computes and stores the location of the user in a hashmap
   socket.on("computeLocation", async (position, callback) => {
     const user = getUser(socket.id);
-    fetchLocation(user.username, position.latitude, position.longitude);
+    fetchLocation(user, position.latitude, position.longitude);
     callback();
   });
 
   socket.on("disconnect", () => {
     const user = removeUser(socket.id);
-
     if (user) {
+      deleteLocation(user);
+      deleteAvatar(user);
       io.to(user.room).emit(
         "message",
         generateMessage(

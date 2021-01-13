@@ -56,7 +56,7 @@
                     <p style="margin-bottom: 0;">
                         <span class="message__name">{{username}}</span>
                         <span class="message__meta">{{createdAt}}</span>
-                        <span class="message__meta">( Sent from {{location}} )</span>
+                        <div class="location_data">( Sent from {{location}} )</div>
                     </p>
                     <p id="text_{{message_id}}" class="chat_message" >{{message}}</p>
                     <details onClick="hello(this, '{{message_id}}')">
