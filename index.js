@@ -41,7 +41,7 @@ io.on("connection", (socket) => {
     socket.emit("message", {
       message: generateMessage(
         { id: "admin_id", username: "Bingo!", room: user.room },
-        "Welcome"
+        "Welcome! \n You are chatting under safe chat. Abusive messages are directly blocked by admin ( Currently supported for English )"
       ),
       location: "Bingo!",
     });
@@ -76,7 +76,7 @@ io.on("connection", (socket) => {
           location: "Bingo!",
         });
         return callback(
-          "PLease maintain your language.Profanity is prohibited!"
+          "PLease maintain your language. Profanity is prohibited!"
         );
       }
       // Translating every message to the room_language (room) by default
