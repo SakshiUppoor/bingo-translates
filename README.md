@@ -1,7 +1,7 @@
 <br />
 <p align="center">
     <img src="https://i.imgur.com/df0HTgj.png" alt="Logo" height="80">
-   <h3 align="center">Bingo Translates! <a href="https://bingo-translates-v2.herokuapp.com/">[DEMO]</a></h3>
+   <h3 align="center">Bingo Translates!</h3>
     <div >
       <p align="center"> Feeling stuck while learning a new language? Don't worry, we've got you covered! <br/>
          Learning a new language has never been this fun and easy before, Click <a href="https://bingo-translates-v2.herokuapp.com/">here</a> to get  started
@@ -9,7 +9,7 @@
        </p>
     </div>
     <p align ="center">
-    <a href="https://github.com/SakshiUppoor/bingo-translates">View</a>
+    <a href="https://bingo-translates-v2.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/SakshiUppoor/bingo-translates/issues">Report Bug</a>
     ·
@@ -25,10 +25,8 @@
 </p>
 
 ### Brief Intro
-
-<strong>Bingo Translates was made with the intention to solve the problem of learning new languages.<br/>
-It is a platform where you can learn new words, test your skills, interact with others who are on <br/>
-the same journey as your's, thus socializing and learning at the same time!</strong>
+Bingo Translates was made with the intention to solve the problem of learning new languages.<br/>
+It is a platform where you can learn new words, test your skills, interact with others who are on the same journey as your's, thus socializing and learning at the same time!
 
 ### Features
 
@@ -47,9 +45,9 @@ the same journey as your's, thus socializing and learning at the same time!</str
 You need to have node.js installed in your system (If not you can download it from <a href="https://nodejs.org/en/download/">here</a>).<br/>
 Once installed :
 
-    git clone "https://github.com/SakshiUppoor/re-bag.git" (Or you can download it directly from GitHub)
-    npm install (This will install all the dependencies)
-    npm start (Run the application)
+    git clone "https://github.com/SakshiUppoor/re-bag.git" # Or you can directly download the zip from GitHub
+    npm install # This will install all the dependencies
+    npm start   # Run the application
 
 ## Team
 
