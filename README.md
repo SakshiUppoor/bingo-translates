@@ -3,9 +3,9 @@
   <img src="https://imgur.com/S2gJ8ch.png" alt="Logo" height="80">
   <h3 align="center">Bingo Translates! <a href="https://bingo-translates-v2.herokuapp.com/">[DEMO]</a></h3>
   <div >
-    <h4 align="center"> Feeling stuck while learning a new language?<h4/> <br/>
-    <h4 align="center"> Don't worry, we've got you covered! <h4/><br/>
-    <h4 align="center"> Learning a new language has never been this fun and easy before<h4/><br/>
+    <h4 align="center"> Feeling stuck while learning a new language?<h4/>
+    <h4 align="center"> Don't worry, we've got you covered! <h4/>
+    <h4 align="center"> Learning a new language has never been this fun and easy before<h4/>
      <h4 align="center">Click here to get  started.</h4>
   </div>
 
