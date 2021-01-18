@@ -27,7 +27,10 @@
  ## About the project
   ### Brief Intro
   
-<strong>Bingo Translates was made with the intention to solve the problem of learning new languages. It is a platform where you can interact with others who are on the same journey as your's, thus socializing and learning at the same time!</strong>
+<strong>Bingo Translates was made with the intention to solve the problem of learning new languages.
+  It is a platform where you can learn new words, test your skills, <br/> 
+  interact with others who are on the same journey as your's, <br />
+  thus socializing and learning at the same time!</strong>
  
  ### Features
  * Language Translation
