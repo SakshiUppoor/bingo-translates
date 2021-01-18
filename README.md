@@ -21,24 +21,26 @@
   
  ## About the project
  <p align="center">
-    <img style="margin:1em" src="https://i.imgur.com/SmvOKCw.mp4" width="500px" height="100%" />
+    <img style="margin:1em" src="https://github.com/yash-chad/bingo-translates/blob/master/demo.gif" width="500px" height="100%" />
 </p>
-  ### Brief Intro
-  
+
+### Brief Intro
+
 <strong>Bingo Translates was made with the intention to solve the problem of learning new languages.<br/>
-  It is a platform where you can learn new words, test your skills, interact with others who are on <br/>
-  the same journey as your's, thus socializing and learning at the same time!</strong>
- 
- ### Features
- * Language Translation
-* Text-to-speech & Speech-to-text
-* Multi-language Chat
-* No abusive language allowed
-* Live location sharing
-* Real-time translation
-* Real-time conversation
-* Learn and practice 
-* Word of the day
+It is a platform where you can learn new words, test your skills, interact with others who are on <br/>
+the same journey as your's, thus socializing and learning at the same time!</strong>
+
+### Features
+
+- Language Translation
+- Text-to-speech & Speech-to-text
+- Multi-language Chat
+- No abusive language allowed
+- Live location sharing
+- Real-time translation
+- Real-time conversation
+- Learn and practice
+- Word of the day
 
 ## Install
 
@@ -54,7 +56,6 @@ Once installed :
 - <a href="https://github.com/yash-chad"><b>Yash Chachad</b></a> - Full Stack Developer & Team Lead
 - <a href="https://github.com/SakshiUppoor"><b>Sakshi Uppoor</b></a> - Full Stack Developer & Designer
 - <a href="https://github.com/SiddhiJhunjhunwala"><b>Siddhi Jhunjhunwala</b></a> - Frontend Developer & Designer
-
 
 ## Built with
 
