@@ -20,6 +20,9 @@
   
   
  ## About the project
+ <p align="center">
+    <img style="margin:1em" src="https://i.imgur.com/SmvOKCw.mp4" width="500px" height="100%" />
+</p>
   ### Brief Intro
   
 <strong>Bingo Translates was made with the intention to solve the problem of learning new languages.<br/>
