@@ -8,7 +8,6 @@
         <a href="https://github.com/SakshiUppoor/bingo-translates"><br/><br/><strong>Explore the docs »</strong></a>
        </p>
     </div>
-  <br />
     <p align ="center">
     <a href="https://github.com/SakshiUppoor/bingo-translates">View</a>
     ·
