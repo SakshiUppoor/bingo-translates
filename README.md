@@ -42,6 +42,15 @@
 * Learn and practice 
 * Word of the day
 
+## Install
+
+You need to have node.js installed in your system (If not you can download it from <a href="https://nodejs.org/en/download/">here</a>).<br/>
+Once installed :
+
+    git clone "https://github.com/SakshiUppoor/re-bag.git" (Or you can download it directly from GitHub)
+    npm install (This will install all the dependencies)
+    npm start (Run the application)
+
 ## Team
 
 - <a href="https://github.com/yash-chad"><b>Yash Chachad</b></a> - Full Stack & Team Lead
