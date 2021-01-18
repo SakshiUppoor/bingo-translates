@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <img src="https://imgur.com/S2gJ8ch.png" alt="Logo" height="80">
+<!--   <img src="https://imgur.com/S2gJ8ch.png" alt="Logo" height="80"> -->
   <h3 align="center">Bingo Translates! <a href="https://bingo-translates-v2.herokuapp.com/">[DEMO]</a></h3>
   <div >
     <h4 align="center"> Feeling stuck while learning a new language?<h4/>
@@ -22,7 +22,20 @@
   </p>
   </p>
   
+  
+  
  ## About the project
+  ### Brief Intro
+ * Language Translation
+* Text-to-speech & Speech-to-text
+* Multi-language Chat
+* No abusive language allowed
+* Live location sharing
+* Real-time translation
+* Real-time conversation
+* Learn and practice 
+* Word of the day
+ 
  ### Features
  * Language Translation
 * Text-to-speech & Speech-to-text
