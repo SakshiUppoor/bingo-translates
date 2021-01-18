@@ -45,7 +45,7 @@ It is a platform where you can learn new words, test your skills, interact with 
 You need to have node.js installed in your system (If not you can download it from <a href="https://nodejs.org/en/download/">here</a>).<br/>
 Once installed :
 
-    git clone "https://github.com/SakshiUppoor/re-bag.git" # Or you can directly download the zip from GitHub
+    git clone "https://github.com/SakshiUppoor/bingo-translates.git" # Or you can directly download the zip from GitHub
     npm install # This will install all the dependencies
     npm start   # Run the application
 
