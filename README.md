@@ -5,7 +5,7 @@
   <div >
     <p align="center"> Feeling stuck while learning a new language? Don't worry, we've got you covered! <br/>
  Learning a new language has never been this fun and easy before, Click <a href="https://bingo-translates-v2.herokuapp.com/">here</a> to get  started
-  <a href="https://github.com/SakshiUppoor/bingo-translates"><strong>Explore the docs »</strong></a></p>
+  <a href="https://github.com/SakshiUppoor/bingo-translates"><br/><br/><strong>Explore the docs »</strong></a></p>
   </div>
   <br />
  
