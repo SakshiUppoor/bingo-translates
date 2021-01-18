@@ -4,8 +4,8 @@
   <h3 align="center">Bingo Translates! <a href="https://bingo-translates-v2.herokuapp.com/">[DEMO]</a></h3>
   <div >
     <p align="center"> Feeling stuck while learning a new language? Don't worry, we've got you covered! <br/>
- Learning a new language has never been this fun and easy before, Click <a href="https://bingo-translates-v2.herokuapp.com/">here</a> to get  started</p>
-    <p align ="center"><a href="https://github.com/SakshiUppoor/bingo-translates"><strong>Explore the docs »</strong></a></p>
+ Learning a new language has never been this fun and easy before, Click <a href="https://bingo-translates-v2.herokuapp.com/">here</a> to get  started
+  <a href="https://github.com/SakshiUppoor/bingo-translates"><strong>Explore the docs »</strong></a></p>
   </div>
   <br />
  
