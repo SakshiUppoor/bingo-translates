@@ -48,9 +48,9 @@ Once installed :
 
 ## Team
 
-- <a href="https://github.com/yash-chad"><b>Yash Chachad</b></a> - Full Stack & Team Lead
-- <a href="https://github.com/SakshiUppoor"><b>Sakshi Uppoor</b></a> - Full Stack & Design
-- <a href="https://github.com/SiddhiJhunjhunwala"><b>Siddhi Jhunjhunwala</b></a> - Frontend & Design
+- <a href="https://github.com/yash-chad"><b>Yash Chachad</b></a> - Full Stack Developer & Team Lead
+- <a href="https://github.com/SakshiUppoor"><b>Sakshi Uppoor</b></a> - Full Stack Developer & Designer
+- <a href="https://github.com/SiddhiJhunjhunwala"><b>Siddhi Jhunjhunwala</b></a> - Frontend Developer & Designer
 
 
 ## Built with
