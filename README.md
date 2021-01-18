@@ -26,15 +26,8 @@
   
  ## About the project
   ### Brief Intro
- * Language Translation
-* Text-to-speech & Speech-to-text
-* Multi-language Chat
-* No abusive language allowed
-* Live location sharing
-* Real-time translation
-* Real-time conversation
-* Learn and practice 
-* Word of the day
+  
+<strong>Bingo Translates was made with the intention to solve the problem of learning new languages. It is a platform where you can interact with others who are on the same journey as your's, thus socializing and learning at the same time!</strong>
  
  ### Features
  * Language Translation
