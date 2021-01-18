@@ -9,11 +9,6 @@
        </p>
     </div>
   <br />
- 
-  
-   <br />
-    <br />
-    <br />
     <p align ="center">
     <a href="https://github.com/SakshiUppoor/bingo-translates">View</a>
     ·
