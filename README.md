@@ -1,7 +1,8 @@
 <br />
 <p align="center">
-  <h3 align="center">Bingo!-Language Translator</h3>
-
+  <img src="https://imgur.com/S2gJ8ch.png" alt="Logo" height="80">
+  <h3 align="center">Bingo Translates! <a href="https://bingo-translates-v2.herokuapp.com/">[DEMO]</a></h3>
+  
    <br />
     <a href="https://github.com/SakshiUppoor/bingo-translates/blob/master/static/Bingo.pdf"><strong>Explore the docs »</strong></a>
     <br />
